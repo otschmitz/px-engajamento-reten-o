@@ -64,33 +64,28 @@ def fill_survey(page, run_number):
         """)
 
     # Preencher perguntas abertas
-    open_eng_options = [
+    open_options = [
         "Contratos concluídos e faturamento",
-        "Retenção operacional e DAU/MAU",
-        "Score de habitualidade",
-        "Engajamento com ofertas",
         "Tempo até primeiro frete",
         "Avaliações e taxa de atendimento",
         "Notificações e sessões no app",
         "Candidaturas e visualizações de frete",
-        "Score do motorista",
         "Perfil completo e preferências",
-    ]
-    open_ret_options = [
-        "Churn por janela temporal",
-        "Retenção D30/D60/D90",
         "Faturamento mensal e pagamentos",
-        "Contratos cancelados e remoções",
-        "CNH vencendo e documentos",
-        "Sinais clássicos de churn",
-        "Queda de atividade e faturamento",
         "Distância ao ponto de coleta",
         "Bloqueios por empresa",
-        "Alertas automatizados",
+        "Nível PX",
+    ]
+    open_outras_options = [
+        "NPS do prestador",
+        "Tempo de resposta a ofertas",
+        "Satisfação com suporte",
+        "Indicações de novos prestadores",
+        "Tempo médio de permanência na plataforma",
     ]
 
-    page.fill("#open_eng", random.choice(open_eng_options))
-    page.fill("#open_ret", random.choice(open_ret_options))
+    page.fill("#open_eng", random.choice(open_options))
+    page.fill("#open_outras", random.choice(open_outras_options))
 
     # Submeter
     page.click("#submitBtn")
