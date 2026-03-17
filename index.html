@@ -621,6 +621,7 @@ function save() {
     const st = {a:{}};
     document.querySelectorAll('input[type="radio"]:checked').forEach(r => { st.a[r.name]=r.value; });
     st.oe = document.getElementById('open_eng').value;
+    st.oo = document.getElementById('open_outras').value;
     st.area = document.getElementById('id_area').value;
     st.tempo = document.getElementById('id_tempo').value;
     st.prox = document.getElementById('id_proximidade').value;
@@ -640,6 +641,7 @@ function load() {
             if (el) el.checked = true;
         }
         if (s.oe) document.getElementById('open_eng').value = s.oe;
+        if (s.oo) document.getElementById('open_outras').value = s.oo;
         if (s.area) document.getElementById('id_area').value = s.area;
         if (s.tempo) document.getElementById('id_tempo').value = s.tempo;
         if (s.prox) document.getElementById('id_proximidade').value = s.prox;
@@ -651,6 +653,7 @@ function clearAll() {
     if (!confirm('Limpar todas as respostas?')) return;
     document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
     document.getElementById('open_eng').value = '';
+    document.getElementById('open_outras').value = '';
     document.getElementById('id_area').value = '';
     document.getElementById('id_tempo').value = '';
     document.getElementById('id_proximidade').value = '';
@@ -716,6 +719,7 @@ function submit() {
             proximidade_motorista: proximidade,
             respostas: data,
             open_engajamento: document.getElementById('open_eng').value,
+            open_outras: document.getElementById('open_outras').value,
         })
     })
     .then(r => r.json())

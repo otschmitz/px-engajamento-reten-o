@@ -75,6 +75,7 @@ async def salvar_respostas(request: Request):
     proximidade = data.get("proximidade_motorista", "")
     respostas = data["respostas"]
     open_eng = data.get("open_engajamento", "")
+    open_outras = data.get("open_outras", "")
 
     client = storage.Client()
     bucket = client.bucket(BUCKET_NAME)
@@ -116,12 +117,12 @@ async def salvar_respostas(request: Request):
     blob.upload_from_string(updated_consolidado, content_type="text/csv")
 
     # Perguntas abertas
-    if open_eng:
+    if open_eng or open_outras:
         open_file = f"{CSV_DIR}/perguntas_abertas.csv"
-        open_headers = ["timestamp", "area_atuacao", "tempo_atuacao", "proximidade_motorista", "maior_impacto"]
+        open_headers = ["timestamp", "area_atuacao", "tempo_atuacao", "proximidade_motorista", "maior_impacto", "outras_metricas"]
         existing_open = _read_existing_csv(bucket, open_file)
         updated_open = _append_rows(
-            existing_open, [[timestamp, area_atuacao, tempo_atuacao, proximidade, open_eng]], headers=open_headers
+            existing_open, [[timestamp, area_atuacao, tempo_atuacao, proximidade, open_eng, open_outras]], headers=open_headers
         )
         blob = bucket.blob(open_file)
         blob.upload_from_string(updated_open, content_type="text/csv")

@@ -68,6 +68,7 @@ def salvar_respostas(request):
     timestamp = data.get("timestamp", datetime.utcnow().isoformat())
     respostas = data["respostas"]
     open_eng = data.get("open_engajamento", "")
+    open_outras = data.get("open_outras", "")
 
     client = storage.Client()
     bucket = client.bucket(BUCKET_NAME)
@@ -105,11 +106,11 @@ def salvar_respostas(request):
     blob.upload_from_string(updated_consolidado, content_type="text/csv")
 
     # Salvar perguntas abertas
-    if open_eng:
+    if open_eng or open_outras:
         open_file = f"{CSV_DIR}/perguntas_abertas.csv"
-        open_headers = ["timestamp", "maior_impacto"]
+        open_headers = ["timestamp", "maior_impacto", "outras_metricas"]
         existing_open = _read_existing_csv(bucket, open_file)
-        updated_open = _append_rows(existing_open, [[timestamp, open_eng]], headers=open_headers)
+        updated_open = _append_rows(existing_open, [[timestamp, open_eng, open_outras]], headers=open_headers)
         blob = bucket.blob(open_file)
         blob.upload_from_string(updated_open, content_type="text/csv")
         arquivos.append(open_file)
