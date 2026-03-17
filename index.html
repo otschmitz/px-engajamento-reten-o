@@ -513,15 +513,15 @@
 
     <div class="card">
         <div class="open-card">
-            <label>Quais métricas de maior impacto em engajamento? <span>(opcional)</span></label>
+            <label>Quais métricas você considera de maior impacto? <span>(opcional)</span></label>
             <input type="text" id="open_eng" placeholder="Sua resposta">
         </div>
     </div>
 
     <div class="card">
         <div class="open-card">
-            <label>Quais métricas de maior impacto em retenção? <span>(opcional)</span></label>
-            <input type="text" id="open_ret" placeholder="Sua resposta">
+            <label>Quais outras métricas você considera que tenha impacto? <span>(opcional)</span></label>
+            <input type="text" id="open_outras" placeholder="Sua resposta">
         </div>
     </div>
 
@@ -545,44 +545,35 @@
 const SC = ['Nenhum','Baixo','Moderado','Alto','Muito alto'];
 
 const D = [
-  {t:'1. Base Cadastral',q:[{i:'1.1',m:'Perfil completo do prestador'},{i:'1.1b',m:'Endereço com coordenadas'},{i:'1.1c',m:'Cidades onde opera'}]},
-  {t:'2. Atividade no App',q:[{i:'2.1',m:'Último acesso ao app'},{i:'2.2',m:'Sessões detalhadas'},{i:'2.3',m:'Notificações abertas'},{i:'2.4',m:'Tracking de notificações'}]},
-  {t:'3. Operação e Fretes',q:[{i:'3.1',m:'Visualizações e candidaturas'},{i:'3.2',m:'Contratos concluídos'},{i:'3.3',m:'Contratos cancelados'},{i:'3.4',m:'Remoções de contrato'},{i:'3.5',m:'Tempo até primeiro frete'},{i:'3.6',m:'Intervalo entre fretes'}]},
+  {t:'1. Cadastro',q:[{i:'1.1',m:'Perfil completo do prestador'},{i:'1.1b',m:'Endereço com coordenadas'},{i:'1.1c',m:'Cidades onde opera'},{i:'1.1d',m:'Gênero'},{i:'1.1e',m:'Idade'},{i:'1.1f',m:'Cidade'},{i:'1.1g',m:'Estado'},{i:'1.1h',m:'Cursos'},{i:'1.1i',m:'Tempo validade CNH'},{i:'1.1j',m:'Tempo validade Toxicológico'},{i:'1.1k',m:'Tipo de prestador'},{i:'1.1l',m:'Tipo de CNH'}]},
+  {t:'2. Atividade no App',q:[{i:'2.1',m:'Último acesso ao app'},{i:'2.2',m:'Sessões detalhadas'},{i:'2.3',m:'Notificações abertas'},{i:'2.4',m:'Tracking de notificações'},{i:'2.5',m:'Visitas a contratos'},{i:'2.6',m:'Número de acessos por dia'},{i:'2.7',m:'Número de acessos por semana'},{i:'2.8',m:'Número de acessos por mês'}]},
+  {t:'3. Operação e Fretes',q:[{i:'3.1',m:'Visualizações'},{i:'3.1b',m:'Candidaturas'},{i:'3.2',m:'Contratos concluídos'},{i:'3.3',m:'Contratos cancelados'},{i:'3.4',m:'Remoções de contrato'},{i:'3.5',m:'Tempo até primeiro frete'},{i:'3.6',m:'Intervalo entre fretes'},{i:'3.7',m:'Tipo de contratos'},{i:'3.8',m:'Score de diversificação'},{i:'3.9',m:'Volume de ofertas na região'},{i:'3.10',m:'Complexidade da operação'}]},
   {t:'4. Convites',q:[{i:'4.1',m:'Convites recebidos/aceitos/recusados'}]},
-  {t:'5. Retenção',q:[{i:'5.1',m:'Retenção D7/D15/D30/D60/D90'},{i:'5.2',m:'Churn por janela temporal'},{i:'5.3',m:'Retenção operacional'},{i:'5.4',m:'Retenção por coorte mensal'}]},
-  {t:'6. Engajamento',q:[{i:'6.1',m:'DAU / WAU / MAU'},{i:'6.2',m:'Engajamento com ofertas'},{i:'6.3',m:'Engajamento transacional semanal'}]},
   {t:'7. Financeiro',q:[{i:'7.1',m:'Faturamento mensal'},{i:'7.2',m:'Pagamentos e adiantamentos'},{i:'7.3',m:'Extratos financeiros'},{i:'7.4',m:'Descontos e glosas'}]},
-  {t:'8. Qualidade e Experiência',q:[{i:'8.1',m:'Avaliações recebidas'},{i:'8.2',m:'Avaliações dadas'},{i:'8.3',m:'Taxa de atendimento'}]},
-  {t:'9. Ocorrências Operacionais',q:[{i:'9.1',m:'Ocorrências comportamentais'},{i:'9.2',m:'Ocorrências de contrato'}]},
-  {t:'10. Risco de Churn',q:[{i:'10.1',m:'Sinais clássicos de churn'},{i:'10.2',m:'Queda de atividade'},{i:'10.3',m:'Documentos vencendo'},{i:'10.4',m:'Risco GR'},{i:'10.5',m:'Queda de faturamento'}]},
+  {t:'8. Qualidade e Experiência',q:[{i:'8.1',m:'Avaliações recebidas'},{i:'8.2',m:'Avaliações dadas'},{i:'8.3',m:'Taxa de atendimento'},{i:'8.4',m:'Desistência de contrato'},{i:'8.5',m:'Não comparecimento em contrato'}]},
+  {t:'9. Ocorrências Operacionais',q:[{i:'9.1',m:'Ocorrências comportamentais'},{i:'9.2',m:'Dias adicionados no contrato'},{i:'9.3',m:'Dias removidos no contrato'}]},
   {t:'11. Preferências',q:[{i:'11.1',m:'Preferências cadastradas'},{i:'11.2',m:'Preferências inferidas'},{i:'11.3',m:'Preferência tipo contrato'},{i:'11.4',m:'Aderência ao perfil ideal do transportador'}]},
-  {t:'12. Férias e Inatividade',q:[{i:'12.1',m:'Férias ou retorno ao CLT'}]},
+  {t:'12. CLT',q:[{i:'12.1',m:'Férias ou retorno ao CLT'},{i:'12.2',m:'Tempo CLT'}]},
   {t:'13. Geolocalização',q:[{i:'13.1',m:'Distância ao ponto de coleta'},{i:'13.2',m:'Distância média aceita'}]},
-  {t:'14. Eventos de Contrato',q:[{i:'14.1',m:'Eventos por prestador'},{i:'14.2',m:'Tipos e labels de eventos'}]},
-  {t:'15. Score de Habitualidade',q:[{i:'15.1',m:'Score de habitualidade'},{i:'15.2',m:'Histórico do score'}]},
-  {t:'16. Score do Prestador',q:[{i:'16.1',m:'Score atual'},{i:'16.2',m:'Histórico do score'}]},
-  {t:'17. Blacklist',q:[{i:'17.1',m:'Bloqueios por empresa'}]},
-  {t:'18. Score de Risco Composto',q:[{i:'18.1',m:'Score composto de churn'}]},
-  {t:'19. Alertas Automatizados',q:[{i:'19.1',m:'14 dias sem login'},{i:'19.2',m:'30 dias sem frete'},{i:'19.3',m:'Queda 50% candidaturas'},{i:'19.4',m:'Alto valor + risco evasão'},{i:'19.5',m:'CNH vencendo (7 dias)'},{i:'19.6',m:'Poucas ofertas aderentes'},{i:'19.7',m:'Ocorrência recente + risco'}]},
-  {t:'20. Aderência Oferta-Perfil',q:[{i:'20.1',m:'Match preferências x frete'}]},
+  {t:'16. Nível PX',q:[{i:'16.1',m:'Score atual'},{i:'16.2',m:'Histórico do score'}]},
+  {t:'17. Blacklist e Favoritos',q:[{i:'17.1',m:'Bloqueios por empresa'},{i:'17.2',m:'Ser favoritado por uma empresa'},{i:'17.3',m:'Número de empresas em que é favoritado'}]},
+  {t:'20. Aderência Oferta-Perfil',q:[{i:'20.1',m:'Match preferências x frete'},{i:'20.2',m:'Match preferências da transportadora'}]},
 ];
 
 let totalQ = 0;
 
-function grid(qs, prefix, cls) {
-    const badgeCls = prefix === 'eng' ? 'badge-eng' : 'badge-ret';
-    const badgeLabel = prefix === 'eng' ? 'Eng' : 'Ret';
-    let h = `<table class="likert-grid ${cls}"><colgroup><col class="col-label">`;
+function grid(qs) {
+    let h = `<table class="likert-grid"><colgroup><col class="col-label">`;
     for (let c = 0; c < 5; c++) h += `<col class="col-opt">`;
     h += `</colgroup><thead><tr><td></td>`;
     SC.forEach(s => { h += `<td>${s}</td>`; });
     h += `</tr></thead><tbody>`;
     qs.forEach(q => {
         const sid = q.i.replace(/\./g,'_');
-        h += `<tr data-rid="${prefix}_${sid}">`;
-        h += `<td><strong>${q.m}</strong><br><span class="badge ${badgeCls}">${badgeLabel}</span></td>`;
+        h += `<tr data-rid="q_${sid}">`;
+        h += `<td><strong>${q.m}</strong></td>`;
         SC.forEach((_, v) => {
-            h += `<td><label><input type="radio" name="${prefix}_${sid}" value="${v+1}" onchange="pick(this)"><span class="g-radio"></span></label></td>`;
+            h += `<td><label><input type="radio" name="q_${sid}" value="${v+1}" onchange="pick(this)"><span class="g-radio"></span></label></td>`;
         });
         h += `</tr>`;
     });
@@ -597,10 +588,7 @@ function build() {
         totalQ += sec.q.length;
         html += `<div class="card section-card">`;
         html += `<div class="section-title">${sec.t}</div>`;
-        html += `<div class="grid-label grid-label-eng">Impacto no Engajamento</div>`;
-        html += grid(sec.q, 'eng', 'grid-eng');
-        html += `<div class="grid-label grid-label-ret" style="margin-top:8px;">Impacto na Retenção</div>`;
-        html += grid(sec.q, 'ret', 'grid-ret');
+        html += grid(sec.q);
         html += `</div>`;
     });
     el.innerHTML = html;
@@ -610,8 +598,7 @@ function countDone() {
     let n = 0;
     D.forEach(s => s.q.forEach(q => {
         const sid = q.i.replace(/\./g,'_');
-        if (document.querySelector(`input[name="eng_${sid}"]:checked`) &&
-            document.querySelector(`input[name="ret_${sid}"]:checked`)) n++;
+        if (document.querySelector(`input[name="q_${sid}"]:checked`)) n++;
     }));
     return n;
 }
@@ -634,7 +621,6 @@ function save() {
     const st = {a:{}};
     document.querySelectorAll('input[type="radio"]:checked').forEach(r => { st.a[r.name]=r.value; });
     st.oe = document.getElementById('open_eng').value;
-    st.or = document.getElementById('open_ret').value;
     st.area = document.getElementById('id_area').value;
     st.tempo = document.getElementById('id_tempo').value;
     st.prox = document.getElementById('id_proximidade').value;
@@ -654,7 +640,6 @@ function load() {
             if (el) el.checked = true;
         }
         if (s.oe) document.getElementById('open_eng').value = s.oe;
-        if (s.or) document.getElementById('open_ret').value = s.or;
         if (s.area) document.getElementById('id_area').value = s.area;
         if (s.tempo) document.getElementById('id_tempo').value = s.tempo;
         if (s.prox) document.getElementById('id_proximidade').value = s.prox;
@@ -666,7 +651,6 @@ function clearAll() {
     if (!confirm('Limpar todas as respostas?')) return;
     document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
     document.getElementById('open_eng').value = '';
-    document.getElementById('open_ret').value = '';
     document.getElementById('id_area').value = '';
     document.getElementById('id_tempo').value = '';
     document.getElementById('id_proximidade').value = '';
@@ -678,9 +662,8 @@ function collect() {
     const data = [];
     D.forEach(s => s.q.forEach(q => {
         const sid = q.i.replace(/\./g,'_');
-        const e = document.querySelector(`input[name="eng_${sid}"]:checked`);
-        const r = document.querySelector(`input[name="ret_${sid}"]:checked`);
-        data.push({secao:s.t, id:q.i, metrica:q.m, engajamento:e?+e.value:null, retencao:r?+r.value:null});
+        const v = document.querySelector(`input[name="q_${sid}"]:checked`);
+        data.push({secao:s.t, id:q.i, metrica:q.m, impacto:v?+v.value:null});
     }));
     return data;
 }
@@ -707,8 +690,7 @@ function submit() {
 
     data.forEach(r => {
         const sid = r.id.replace(/\./g,'_');
-        if (!r.engajamento) { miss++; document.querySelector(`tr[data-rid="eng_${sid}"]`)?.classList.add('unanswered'); }
-        if (!r.retencao) { miss++; document.querySelector(`tr[data-rid="ret_${sid}"]`)?.classList.add('unanswered'); }
+        if (!r.impacto) { miss++; document.querySelector(`tr[data-rid="q_${sid}"]`)?.classList.add('unanswered'); }
     });
 
     const al = document.getElementById('alert');
@@ -734,7 +716,6 @@ function submit() {
             proximidade_motorista: proximidade,
             respostas: data,
             open_engajamento: document.getElementById('open_eng').value,
-            open_retencao: document.getElementById('open_ret').value,
         })
     })
     .then(r => r.json())
@@ -752,8 +733,8 @@ function submit() {
 
 function downloadCSV() {
     const data = collect();
-    let csv = 'Seção,ID,Métrica,Engajamento,Retenção\n';
-    data.forEach(r => { csv += `"${r.secao}","${r.id}","${r.metrica}",${r.engajamento||''},${r.retencao||''}\n`; });
+    let csv = 'Seção,ID,Métrica,Impacto\n';
+    data.forEach(r => { csv += `"${r.secao}","${r.id}","${r.metrica}",${r.impacto||''}\n`; });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}));
     a.download = 'minha_resposta.csv'; a.click();

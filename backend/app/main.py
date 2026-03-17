@@ -21,7 +21,7 @@ app.add_middleware(
 BUCKET_NAME = "survey-engajamento-retencao"
 CSV_DIR = "respostas"
 
-HEADERS = ["timestamp", "area_atuacao", "tempo_atuacao", "proximidade_motorista", "secao", "id", "metrica", "impacto_engajamento", "impacto_retencao"]
+HEADERS = ["timestamp", "area_atuacao", "tempo_atuacao", "proximidade_motorista", "secao", "id", "metrica", "impacto"]
 
 
 def _slugify(text: str) -> str:
@@ -75,7 +75,6 @@ async def salvar_respostas(request: Request):
     proximidade = data.get("proximidade_motorista", "")
     respostas = data["respostas"]
     open_eng = data.get("open_engajamento", "")
-    open_ret = data.get("open_retencao", "")
 
     client = storage.Client()
     bucket = client.bucket(BUCKET_NAME)
@@ -93,8 +92,7 @@ async def salvar_respostas(request: Request):
             secao,
             r.get("id", ""),
             r.get("metrica", ""),
-            r.get("engajamento", ""),
-            r.get("retencao", ""),
+            r.get("impacto", ""),
         ]
         all_rows.append(row)
         por_secao.setdefault(secao, []).append(row)
@@ -118,12 +116,12 @@ async def salvar_respostas(request: Request):
     blob.upload_from_string(updated_consolidado, content_type="text/csv")
 
     # Perguntas abertas
-    if open_eng or open_ret:
+    if open_eng:
         open_file = f"{CSV_DIR}/perguntas_abertas.csv"
-        open_headers = ["timestamp", "area_atuacao", "tempo_atuacao", "proximidade_motorista", "maior_impacto_engajamento", "maior_impacto_retencao"]
+        open_headers = ["timestamp", "area_atuacao", "tempo_atuacao", "proximidade_motorista", "maior_impacto"]
         existing_open = _read_existing_csv(bucket, open_file)
         updated_open = _append_rows(
-            existing_open, [[timestamp, area_atuacao, tempo_atuacao, proximidade, open_eng, open_ret]], headers=open_headers
+            existing_open, [[timestamp, area_atuacao, tempo_atuacao, proximidade, open_eng]], headers=open_headers
         )
         blob = bucket.blob(open_file)
         blob.upload_from_string(updated_open, content_type="text/csv")

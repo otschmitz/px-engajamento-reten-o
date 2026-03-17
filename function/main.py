@@ -9,7 +9,7 @@ BUCKET_NAME = "tschmitz-data-science-site"
 CSV_DIR = "respostas"
 CSV_CONSOLIDADO = "respostas/consolidado.csv"
 
-HEADERS = ["timestamp", "secao", "id", "metrica", "impacto_engajamento", "impacto_retencao"]
+HEADERS = ["timestamp", "secao", "id", "metrica", "impacto"]
 
 
 def _slugify(text):
@@ -68,7 +68,6 @@ def salvar_respostas(request):
     timestamp = data.get("timestamp", datetime.utcnow().isoformat())
     respostas = data["respostas"]
     open_eng = data.get("open_engajamento", "")
-    open_ret = data.get("open_retencao", "")
 
     client = storage.Client()
     bucket = client.bucket(BUCKET_NAME)
@@ -83,8 +82,7 @@ def salvar_respostas(request):
             secao,
             r.get("id", ""),
             r.get("metrica", ""),
-            r.get("engajamento", ""),
-            r.get("retencao", ""),
+            r.get("impacto", ""),
         ]
         all_rows.append(row)
         por_secao.setdefault(secao, []).append(row)
@@ -107,11 +105,11 @@ def salvar_respostas(request):
     blob.upload_from_string(updated_consolidado, content_type="text/csv")
 
     # Salvar perguntas abertas
-    if open_eng or open_ret:
+    if open_eng:
         open_file = f"{CSV_DIR}/perguntas_abertas.csv"
-        open_headers = ["timestamp", "maior_impacto_engajamento", "maior_impacto_retencao"]
+        open_headers = ["timestamp", "maior_impacto"]
         existing_open = _read_existing_csv(bucket, open_file)
-        updated_open = _append_rows(existing_open, [[timestamp, open_eng, open_ret]], headers=open_headers)
+        updated_open = _append_rows(existing_open, [[timestamp, open_eng]], headers=open_headers)
         blob = bucket.blob(open_file)
         blob.upload_from_string(updated_open, content_type="text/csv")
         arquivos.append(open_file)
