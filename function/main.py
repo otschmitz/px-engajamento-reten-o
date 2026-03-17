@@ -13,7 +13,7 @@ HEADERS = ["timestamp", "secao", "id", "metrica", "impacto_engajamento", "impact
 
 
 def _slugify(text):
-    """Converte nome de secao em slug para nome de arquivo."""
+    """Converte nome de seção em slug para nome de arquivo."""
     text = text.lower().strip()
     text = re.sub(r'^\d+\.\s*', '', text)
     text = re.sub(r'[^a-z0-9]+', '_', text)
@@ -63,7 +63,7 @@ def salvar_respostas(request):
 
     data = request.get_json(silent=True)
     if not data or "respostas" not in data:
-        return ({"error": "JSON invalido. Envie {respostas: [...]}"}, 400, cors_headers)
+        return ({"error": "JSON inválido. Envie {respostas: [...]}"}, 400, cors_headers)
 
     timestamp = data.get("timestamp", datetime.utcnow().isoformat())
     respostas = data["respostas"]
@@ -73,7 +73,7 @@ def salvar_respostas(request):
     client = storage.Client()
     bucket = client.bucket(BUCKET_NAME)
 
-    # Agrupar respostas por secao
+    # Agrupar respostas por seção
     por_secao = {}
     all_rows = []
     for r in respostas:
@@ -89,7 +89,7 @@ def salvar_respostas(request):
         all_rows.append(row)
         por_secao.setdefault(secao, []).append(row)
 
-    # Salvar CSV por tema/secao
+    # Salvar CSV por tema/seção
     arquivos = []
     for secao, rows in por_secao.items():
         slug = _slugify(secao)

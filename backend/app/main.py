@@ -9,7 +9,7 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from google.cloud import storage
 
-app = FastAPI(title="Survey - Engajamento e Retencao")
+app = FastAPI(title="Inquérito - Engajamento e Retenção")
 
 app.add_middleware(
     CORSMiddleware,
@@ -66,7 +66,7 @@ async def salvar_respostas(request: Request):
 
     if not data or "respostas" not in data:
         return JSONResponse(
-            {"error": "JSON invalido. Envie {respostas: [...]}"}, status_code=400
+            {"error": "JSON inválido. Envie {respostas: [...]}"}, status_code=400
         )
 
     timestamp = data.get("timestamp", datetime.utcnow().isoformat())
@@ -80,7 +80,7 @@ async def salvar_respostas(request: Request):
     client = storage.Client()
     bucket = client.bucket(BUCKET_NAME)
 
-    # Agrupar por secao
+    # Agrupar por seção
     por_secao: dict[str, list] = {}
     all_rows = []
     for r in respostas:

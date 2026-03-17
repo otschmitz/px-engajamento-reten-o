@@ -1,5 +1,5 @@
 """
-Preenche o survey 10 vezes com respostas aleatorias via Playwright.
+Preenche o inquérito 10 vezes com respostas aleatórias via Playwright.
 """
 
 import random
@@ -11,8 +11,8 @@ TOTAL_RUNS = 10
 
 
 AREAS = [
-    "Operacoes", "Produto", "Comercial", "Tecnologia",
-    "RH", "Financeiro", "Marketing", "Logistica",
+    "Operações", "Produto", "Comercial", "Tecnologia",
+    "RH", "Financeiro", "Marketing", "Logística",
     "Atendimento", "Data Science",
 ]
 
@@ -30,11 +30,11 @@ PROXIMIDADES = [
 def fill_survey(page, run_number):
     page.goto(URL, wait_until="networkidle")
 
-    # Limpar localStorage para comecar limpo
+    # Limpar localStorage para começar limpo
     page.evaluate("localStorage.removeItem('sv3')")
     page.reload(wait_until="networkidle")
 
-    # Preencher identificacao do respondente
+    # Preencher identificação do respondente
     page.fill("#id_area", random.choice(AREAS))
     page.select_option("#id_tempo", random.choice(TEMPOS))
     page.select_option("#id_proximidade", random.choice(PROXIMIDADES))
@@ -50,7 +50,7 @@ def fill_survey(page, run_number):
 
     print(f"  Run {run_number}: {len(radio_groups)} grupos de radio encontrados")
 
-    # Para cada grupo, escolher um valor aleatorio (1-5)
+    # Para cada grupo, escolher um valor aleatório (1-5)
     for name in radio_groups:
         value = random.randint(1, 5)
         page.evaluate(f"""
@@ -65,26 +65,26 @@ def fill_survey(page, run_number):
 
     # Preencher perguntas abertas
     open_eng_options = [
-        "Contratos concluidos e faturamento",
-        "Retencao operacional e DAU/MAU",
+        "Contratos concluídos e faturamento",
+        "Retenção operacional e DAU/MAU",
         "Score de habitualidade",
         "Engajamento com ofertas",
-        "Tempo ate primeiro frete",
-        "Avaliacoes e taxa de atendimento",
-        "Notificacoes e sessoes no app",
-        "Candidaturas e visualizacoes de frete",
+        "Tempo até primeiro frete",
+        "Avaliações e taxa de atendimento",
+        "Notificações e sessões no app",
+        "Candidaturas e visualizações de frete",
         "Score do motorista",
-        "Perfil completo e preferencias",
+        "Perfil completo e preferências",
     ]
     open_ret_options = [
         "Churn por janela temporal",
-        "Retencao D30/D60/D90",
+        "Retenção D30/D60/D90",
         "Faturamento mensal e pagamentos",
-        "Contratos cancelados e remocoes",
+        "Contratos cancelados e remoções",
         "CNH vencendo e documentos",
-        "Sinais classicos de churn",
+        "Sinais clássicos de churn",
         "Queda de atividade e faturamento",
-        "Distancia ao ponto de coleta",
+        "Distância ao ponto de coleta",
         "Bloqueios por empresa",
         "Alertas automatizados",
     ]
@@ -111,7 +111,7 @@ def fill_survey(page, run_number):
 
 
 def main():
-    print(f"Preenchendo survey {TOTAL_RUNS} vezes em {URL}\n")
+    print(f"Preenchendo inquérito {TOTAL_RUNS} vezes em {URL}\n")
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)

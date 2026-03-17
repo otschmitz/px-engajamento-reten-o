@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Survey — Engajamento e Retencao</title>
+    <title>Inquérito — Engajamento e Retenção</title>
     <style>
         /* === PX.CENTER BRAND === */
         :root {
@@ -449,25 +449,25 @@
 <div class="wrap" id="formWrap">
     <div class="card">
         <div class="card-header">
-            <h1 style="text-transform: uppercase;">Impacto das Metricas em Engajamento e Retencao</h1>
-            <p>Para cada metrica, avalie o impacto no <strong>engajamento</strong> e na <strong>retencao</strong> dos motoristas.</p>
+            <h1 style="text-transform: uppercase;">Impacto das Métricas em Engajamento e Retenção</h1>
+            <p>Para cada métrica, avalie o impacto no <strong>engajamento</strong> e na <strong>retenção</strong> dos motoristas.</p>
             <div class="time-hint">~5 minutos · Progresso salvo automaticamente</div>
-            <div class="req">* Indica uma pergunta obrigatoria</div>
+            <div class="req">* Indica uma pergunta obrigatória</div>
         </div>
     </div>
 
     <div class="alert" id="alert"></div>
 
     <div class="card section-card">
-        <div class="section-title">Identificacao do Respondente</div>
+        <div class="section-title">Identificação do Respondente</div>
         <div style="padding: 12px 24px 20px;">
             <div class="id-field" id="field_area">
-                <label>Area em que atua <span class="req-star">*</span></label>
-                <input type="text" id="id_area" placeholder="Ex: Operacoes, Produto, Comercial...">
-                <div class="error-msg">Preencha a area em que atua</div>
+                <label>Área em que atua <span class="req-star">*</span></label>
+                <input type="text" id="id_area" placeholder="Ex: Operações, Produto, Comercial...">
+                <div class="error-msg">Preencha a área em que atua</div>
             </div>
             <div class="id-field" id="field_tempo">
-                <label>Ha quanto tempo atua nesta area <span class="req-star">*</span></label>
+                <label>Há quanto tempo atua nesta área <span class="req-star">*</span></label>
                 <select id="id_tempo">
                     <option value="">Selecione...</option>
                     <option value="0-6">Menos de 6 meses</option>
@@ -482,20 +482,20 @@
                     <option value="54-60">4 anos e meio a 5 anos</option>
                     <option value="60+">Mais de 5 anos</option>
                 </select>
-                <div class="error-msg">Selecione o tempo de atuacao</div>
+                <div class="error-msg">Selecione o tempo de atuação</div>
             </div>
             <div class="id-field" id="field_proximidade">
-                <label>Nivel de proximidade com o motorista <span class="req-star">*</span></label>
+                <label>Nível de proximidade com o motorista <span class="req-star">*</span></label>
                 <select id="id_proximidade">
                     <option value="">Selecione...</option>
-                    <option value="varias_dia">Varias vezes por dia — tenho contato direto com motoristas repetidamente ao longo do dia</option>
+                    <option value="varias_dia">Várias vezes por dia — tenho contato direto com motoristas repetidamente ao longo do dia</option>
                     <option value="1_dia">Pelo menos 1 vez por dia — interajo com motoristas todos ou quase todos os dias</option>
-                    <option value="1_semana">Pelo menos 1 vez por semana — tenho contato recorrente, mas nao diario</option>
-                    <option value="1_mes">Pelo menos 1 vez por mes — acompanho motoristas ocasionalmente</option>
-                    <option value="menos_1_mes">Menos de 1 vez por mes — raramente tenho contato com motoristas</option>
-                    <option value="sem_contato">Sem contato direto — minha visao e indireta, por relatorios, sistema ou equipe</option>
+                    <option value="1_semana">Pelo menos 1 vez por semana — tenho contato recorrente, mas não diário</option>
+                    <option value="1_mes">Pelo menos 1 vez por mês — acompanho motoristas ocasionalmente</option>
+                    <option value="menos_1_mes">Menos de 1 vez por mês — raramente tenho contato com motoristas</option>
+                    <option value="sem_contato">Sem contato direto — minha visão é indireta, por relatórios, sistema ou equipe</option>
                 </select>
-                <div class="error-msg">Selecione o nivel de proximidade</div>
+                <div class="error-msg">Selecione o nível de proximidade</div>
             </div>
         </div>
     </div>
@@ -504,21 +504,21 @@
 
     <div class="card">
         <div class="open-card">
-            <label>Quais metricas de maior impacto em engajamento? <span>(opcional)</span></label>
+            <label>Quais métricas de maior impacto em engajamento? <span>(opcional)</span></label>
             <input type="text" id="open_eng" placeholder="Sua resposta">
         </div>
     </div>
 
     <div class="card">
         <div class="open-card">
-            <label>Quais metricas de maior impacto em retencao? <span>(opcional)</span></label>
+            <label>Quais métricas de maior impacto em retenção? <span>(opcional)</span></label>
             <input type="text" id="open_ret" placeholder="Sua resposta">
         </div>
     </div>
 
     <div class="submit-row">
         <button class="btn-submit" id="submitBtn" onclick="submit()">Enviar</button>
-        <button class="btn-clear" onclick="clearAll()">Limpar formulario</button>
+        <button class="btn-clear" onclick="clearAll()">Limpar formulário</button>
     </div>
 
     <div class="footer">DATA SCIENCE · PX.CENTER</div>
@@ -526,7 +526,7 @@
 
 <div class="wrap thankyou" id="thankyou">
     <h2>Resposta registrada</h2>
-    <p>Obrigado pela sua contribuicao.</p>
+    <p>Obrigado pela sua contribuição.</p>
     <button class="btn-clear" onclick="downloadCSV()">Baixar minha resposta</button>
     <br><br>
     <a class="btn-clear" href="javascript:location.reload()">Enviar outra resposta</a>
@@ -536,26 +536,26 @@
 const SC = ['Nenhum','Baixo','Moderado','Alto','Muito alto'];
 
 const D = [
-  {t:'1. Base Cadastral',q:[{i:'1.1',m:'Perfil completo do motorista'},{i:'1.1b',m:'Endereco com coordenadas'},{i:'1.1c',m:'Cidades onde opera'}]},
-  {t:'2. Atividade no App',q:[{i:'2.1',m:'Ultimo acesso ao app'},{i:'2.2',m:'Sessoes detalhadas'},{i:'2.3',m:'Notificacoes abertas'},{i:'2.4',m:'Tracking de notificacoes'}]},
-  {t:'3. Operacao e Fretes',q:[{i:'3.1',m:'Visualizacoes e candidaturas'},{i:'3.2',m:'Contratos concluidos'},{i:'3.3',m:'Contratos cancelados'},{i:'3.4',m:'Remocoes de contrato'},{i:'3.5',m:'Tempo ate primeiro frete'},{i:'3.6',m:'Intervalo entre fretes'}]},
+  {t:'1. Base Cadastral',q:[{i:'1.1',m:'Perfil completo do motorista'},{i:'1.1b',m:'Endereço com coordenadas'},{i:'1.1c',m:'Cidades onde opera'}]},
+  {t:'2. Atividade no App',q:[{i:'2.1',m:'Último acesso ao app'},{i:'2.2',m:'Sessões detalhadas'},{i:'2.3',m:'Notificações abertas'},{i:'2.4',m:'Tracking de notificações'}]},
+  {t:'3. Operação e Fretes',q:[{i:'3.1',m:'Visualizações e candidaturas'},{i:'3.2',m:'Contratos concluídos'},{i:'3.3',m:'Contratos cancelados'},{i:'3.4',m:'Remoções de contrato'},{i:'3.5',m:'Tempo até primeiro frete'},{i:'3.6',m:'Intervalo entre fretes'}]},
   {t:'4. Convites',q:[{i:'4.1',m:'Convites recebidos/aceitos/recusados'}]},
-  {t:'5. Retencao',q:[{i:'5.1',m:'Retencao D7/D15/D30/D60/D90'},{i:'5.2',m:'Churn por janela temporal'},{i:'5.3',m:'Retencao operacional'},{i:'5.4',m:'Retencao por coorte mensal'}]},
+  {t:'5. Retenção',q:[{i:'5.1',m:'Retenção D7/D15/D30/D60/D90'},{i:'5.2',m:'Churn por janela temporal'},{i:'5.3',m:'Retenção operacional'},{i:'5.4',m:'Retenção por coorte mensal'}]},
   {t:'6. Engajamento',q:[{i:'6.1',m:'DAU / WAU / MAU'},{i:'6.2',m:'Engajamento com ofertas'},{i:'6.3',m:'Engajamento transacional semanal'}]},
   {t:'7. Financeiro',q:[{i:'7.1',m:'Faturamento mensal'},{i:'7.2',m:'Pagamentos e adiantamentos'},{i:'7.3',m:'Extratos financeiros'},{i:'7.4',m:'Descontos e glosas'}]},
-  {t:'8. Qualidade e Experiencia',q:[{i:'8.1',m:'Avaliacoes recebidas'},{i:'8.2',m:'Avaliacoes dadas'},{i:'8.3',m:'Taxa de atendimento'}]},
-  {t:'9. Ocorrencias Operacionais',q:[{i:'9.1',m:'Ocorrencias comportamentais'},{i:'9.2',m:'Ocorrencias de contrato'}]},
-  {t:'10. Risco de Churn',q:[{i:'10.1',m:'Sinais classicos de churn'},{i:'10.2',m:'Queda de atividade'},{i:'10.3',m:'Documentos vencendo'},{i:'10.4',m:'Risco GR'},{i:'10.5',m:'Queda de faturamento'}]},
-  {t:'11. Preferencias',q:[{i:'11.1',m:'Preferencias cadastradas'},{i:'11.2',m:'Preferencias inferidas'},{i:'11.3',m:'Preferencia tipo contrato'}]},
-  {t:'12. Ferias e Inatividade',q:[{i:'12.1',m:'Ferias ou retorno ao CLT'}]},
-  {t:'13. Geolocalizacao',q:[{i:'13.1',m:'Distancia ao ponto de coleta'},{i:'13.2',m:'Distancia media aceita'}]},
+  {t:'8. Qualidade e Experiência',q:[{i:'8.1',m:'Avaliações recebidas'},{i:'8.2',m:'Avaliações dadas'},{i:'8.3',m:'Taxa de atendimento'}]},
+  {t:'9. Ocorrências Operacionais',q:[{i:'9.1',m:'Ocorrências comportamentais'},{i:'9.2',m:'Ocorrências de contrato'}]},
+  {t:'10. Risco de Churn',q:[{i:'10.1',m:'Sinais clássicos de churn'},{i:'10.2',m:'Queda de atividade'},{i:'10.3',m:'Documentos vencendo'},{i:'10.4',m:'Risco GR'},{i:'10.5',m:'Queda de faturamento'}]},
+  {t:'11. Preferências',q:[{i:'11.1',m:'Preferências cadastradas'},{i:'11.2',m:'Preferências inferidas'},{i:'11.3',m:'Preferência tipo contrato'}]},
+  {t:'12. Férias e Inatividade',q:[{i:'12.1',m:'Férias ou retorno ao CLT'}]},
+  {t:'13. Geolocalização',q:[{i:'13.1',m:'Distância ao ponto de coleta'},{i:'13.2',m:'Distância média aceita'}]},
   {t:'14. Eventos de Contrato',q:[{i:'14.1',m:'Eventos por motorista'},{i:'14.2',m:'Tipos e labels de eventos'}]},
-  {t:'15. Score de Habitualidade',q:[{i:'15.1',m:'Score de habitualidade'},{i:'15.2',m:'Historico do score'}]},
-  {t:'16. Score do Motorista',q:[{i:'16.1',m:'Score atual'},{i:'16.2',m:'Historico do score'}]},
+  {t:'15. Score de Habitualidade',q:[{i:'15.1',m:'Score de habitualidade'},{i:'15.2',m:'Histórico do score'}]},
+  {t:'16. Score do Motorista',q:[{i:'16.1',m:'Score atual'},{i:'16.2',m:'Histórico do score'}]},
   {t:'17. Blacklist',q:[{i:'17.1',m:'Bloqueios por empresa'}]},
   {t:'18. Score de Risco Composto',q:[{i:'18.1',m:'Score composto de churn'}]},
-  {t:'19. Alertas Automatizados',q:[{i:'19.1',m:'14 dias sem login'},{i:'19.2',m:'30 dias sem frete'},{i:'19.3',m:'Queda 50% candidaturas'},{i:'19.4',m:'Alto valor + risco evasao'},{i:'19.5',m:'CNH vencendo (7 dias)'},{i:'19.6',m:'Poucas ofertas aderentes'},{i:'19.7',m:'Ocorrencia recente + risco'}]},
-  {t:'20. Aderencia Oferta-Perfil',q:[{i:'20.1',m:'Match preferencias x frete'}]},
+  {t:'19. Alertas Automatizados',q:[{i:'19.1',m:'14 dias sem login'},{i:'19.2',m:'30 dias sem frete'},{i:'19.3',m:'Queda 50% candidaturas'},{i:'19.4',m:'Alto valor + risco evasão'},{i:'19.5',m:'CNH vencendo (7 dias)'},{i:'19.6',m:'Poucas ofertas aderentes'},{i:'19.7',m:'Ocorrência recente + risco'}]},
+  {t:'20. Aderência Oferta-Perfil',q:[{i:'20.1',m:'Match preferências x frete'}]},
 ];
 
 let totalQ = 0;
@@ -590,7 +590,7 @@ function build() {
         html += `<div class="section-title">${sec.t}</div>`;
         html += `<div class="grid-label grid-label-eng">Impacto no Engajamento</div>`;
         html += grid(sec.q, 'eng', 'grid-eng');
-        html += `<div class="grid-label grid-label-ret" style="margin-top:8px;">Impacto na Retencao</div>`;
+        html += `<div class="grid-label grid-label-ret" style="margin-top:8px;">Impacto na Retenção</div>`;
         html += grid(sec.q, 'ret', 'grid-ret');
         html += `</div>`;
     });
@@ -704,7 +704,7 @@ function submit() {
 
     const al = document.getElementById('alert');
     if (miss) {
-        al.textContent = `Preencha todas as perguntas obrigatorias (${miss} faltando).`;
+        al.textContent = `Preencha todas as perguntas obrigatórias (${miss} faltando).`;
         al.classList.add('show');
         const firstErr = document.querySelector('.id-field.error') || document.querySelector('tr.unanswered');
         firstErr?.scrollIntoView({behavior:'smooth',block:'center'});
@@ -743,7 +743,7 @@ function submit() {
 
 function downloadCSV() {
     const data = collect();
-    let csv = 'Secao,ID,Metrica,Engajamento,Retencao\n';
+    let csv = 'Seção,ID,Métrica,Engajamento,Retenção\n';
     data.forEach(r => { csv += `"${r.secao}","${r.id}","${r.metrica}",${r.engajamento||''},${r.retencao||''}\n`; });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}));
