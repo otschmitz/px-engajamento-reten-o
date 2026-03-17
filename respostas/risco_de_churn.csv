@@ -1,0 +1,51 @@
+timestamp,area_atuacao,tempo_atuacao,proximidade_motorista,secao,id,metrica,impacto_engajamento,impacto_retencao
+2026-03-17T11:42:47.201Z,Logistica,12-18,varias_dia,10. Risco de Churn,10.1,Sinais classicos de churn,1,1
+2026-03-17T11:42:47.201Z,Logistica,12-18,varias_dia,10. Risco de Churn,10.2,Queda de atividade,4,2
+2026-03-17T11:42:47.201Z,Logistica,12-18,varias_dia,10. Risco de Churn,10.3,Documentos vencendo,3,4
+2026-03-17T11:42:47.201Z,Logistica,12-18,varias_dia,10. Risco de Churn,10.4,Risco GR,1,4
+2026-03-17T11:42:47.201Z,Logistica,12-18,varias_dia,10. Risco de Churn,10.5,Queda de faturamento,5,3
+2026-03-17T11:42:54.030Z,RH,36-42,sem_contato,10. Risco de Churn,10.1,Sinais classicos de churn,5,3
+2026-03-17T11:42:54.030Z,RH,36-42,sem_contato,10. Risco de Churn,10.2,Queda de atividade,3,1
+2026-03-17T11:42:54.030Z,RH,36-42,sem_contato,10. Risco de Churn,10.3,Documentos vencendo,3,2
+2026-03-17T11:42:54.030Z,RH,36-42,sem_contato,10. Risco de Churn,10.4,Risco GR,4,5
+2026-03-17T11:42:54.030Z,RH,36-42,sem_contato,10. Risco de Churn,10.5,Queda de faturamento,5,5
+2026-03-17T11:43:02.336Z,Produto,18-24,menos_1_mes,10. Risco de Churn,10.1,Sinais classicos de churn,1,1
+2026-03-17T11:43:02.336Z,Produto,18-24,menos_1_mes,10. Risco de Churn,10.2,Queda de atividade,2,2
+2026-03-17T11:43:02.336Z,Produto,18-24,menos_1_mes,10. Risco de Churn,10.3,Documentos vencendo,5,3
+2026-03-17T11:43:02.336Z,Produto,18-24,menos_1_mes,10. Risco de Churn,10.4,Risco GR,5,3
+2026-03-17T11:43:02.336Z,Produto,18-24,menos_1_mes,10. Risco de Churn,10.5,Queda de faturamento,3,3
+2026-03-17T11:43:10.729Z,Tecnologia,42-48,menos_1_mes,10. Risco de Churn,10.1,Sinais classicos de churn,2,4
+2026-03-17T11:43:10.729Z,Tecnologia,42-48,menos_1_mes,10. Risco de Churn,10.2,Queda de atividade,2,4
+2026-03-17T11:43:10.729Z,Tecnologia,42-48,menos_1_mes,10. Risco de Churn,10.3,Documentos vencendo,3,5
+2026-03-17T11:43:10.729Z,Tecnologia,42-48,menos_1_mes,10. Risco de Churn,10.4,Risco GR,2,4
+2026-03-17T11:43:10.729Z,Tecnologia,42-48,menos_1_mes,10. Risco de Churn,10.5,Queda de faturamento,2,2
+2026-03-17T11:43:18.546Z,Data Science,36-42,1_semana,10. Risco de Churn,10.1,Sinais classicos de churn,3,3
+2026-03-17T11:43:18.546Z,Data Science,36-42,1_semana,10. Risco de Churn,10.2,Queda de atividade,4,2
+2026-03-17T11:43:18.546Z,Data Science,36-42,1_semana,10. Risco de Churn,10.3,Documentos vencendo,3,1
+2026-03-17T11:43:18.546Z,Data Science,36-42,1_semana,10. Risco de Churn,10.4,Risco GR,4,3
+2026-03-17T11:43:18.546Z,Data Science,36-42,1_semana,10. Risco de Churn,10.5,Queda de faturamento,1,5
+2026-03-17T11:43:26.848Z,Tecnologia,36-42,varias_dia,10. Risco de Churn,10.1,Sinais classicos de churn,4,2
+2026-03-17T11:43:26.848Z,Tecnologia,36-42,varias_dia,10. Risco de Churn,10.2,Queda de atividade,4,3
+2026-03-17T11:43:26.848Z,Tecnologia,36-42,varias_dia,10. Risco de Churn,10.3,Documentos vencendo,5,4
+2026-03-17T11:43:26.848Z,Tecnologia,36-42,varias_dia,10. Risco de Churn,10.4,Risco GR,4,2
+2026-03-17T11:43:26.848Z,Tecnologia,36-42,varias_dia,10. Risco de Churn,10.5,Queda de faturamento,3,3
+2026-03-17T11:43:34.621Z,Marketing,36-42,1_dia,10. Risco de Churn,10.1,Sinais classicos de churn,1,1
+2026-03-17T11:43:34.621Z,Marketing,36-42,1_dia,10. Risco de Churn,10.2,Queda de atividade,3,2
+2026-03-17T11:43:34.621Z,Marketing,36-42,1_dia,10. Risco de Churn,10.3,Documentos vencendo,1,5
+2026-03-17T11:43:34.621Z,Marketing,36-42,1_dia,10. Risco de Churn,10.4,Risco GR,2,5
+2026-03-17T11:43:34.621Z,Marketing,36-42,1_dia,10. Risco de Churn,10.5,Queda de faturamento,5,5
+2026-03-17T11:43:42.425Z,Marketing,54-60,menos_1_mes,10. Risco de Churn,10.1,Sinais classicos de churn,3,5
+2026-03-17T11:43:42.425Z,Marketing,54-60,menos_1_mes,10. Risco de Churn,10.2,Queda de atividade,5,1
+2026-03-17T11:43:42.425Z,Marketing,54-60,menos_1_mes,10. Risco de Churn,10.3,Documentos vencendo,1,4
+2026-03-17T11:43:42.425Z,Marketing,54-60,menos_1_mes,10. Risco de Churn,10.4,Risco GR,4,3
+2026-03-17T11:43:42.425Z,Marketing,54-60,menos_1_mes,10. Risco de Churn,10.5,Queda de faturamento,4,2
+2026-03-17T11:43:50.226Z,Marketing,36-42,menos_1_mes,10. Risco de Churn,10.1,Sinais classicos de churn,4,1
+2026-03-17T11:43:50.226Z,Marketing,36-42,menos_1_mes,10. Risco de Churn,10.2,Queda de atividade,5,2
+2026-03-17T11:43:50.226Z,Marketing,36-42,menos_1_mes,10. Risco de Churn,10.3,Documentos vencendo,4,1
+2026-03-17T11:43:50.226Z,Marketing,36-42,menos_1_mes,10. Risco de Churn,10.4,Risco GR,5,1
+2026-03-17T11:43:50.226Z,Marketing,36-42,menos_1_mes,10. Risco de Churn,10.5,Queda de faturamento,1,2
+2026-03-17T11:43:58.591Z,Logistica,18-24,menos_1_mes,10. Risco de Churn,10.1,Sinais classicos de churn,3,2
+2026-03-17T11:43:58.591Z,Logistica,18-24,menos_1_mes,10. Risco de Churn,10.2,Queda de atividade,4,5
+2026-03-17T11:43:58.591Z,Logistica,18-24,menos_1_mes,10. Risco de Churn,10.3,Documentos vencendo,2,2
+2026-03-17T11:43:58.591Z,Logistica,18-24,menos_1_mes,10. Risco de Churn,10.4,Risco GR,5,3
+2026-03-17T11:43:58.591Z,Logistica,18-24,menos_1_mes,10. Risco de Churn,10.5,Queda de faturamento,2,4

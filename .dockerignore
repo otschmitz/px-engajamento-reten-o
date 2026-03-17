@@ -1,0 +1,6 @@
+function/
+instruções.txt
+*.md
+.git
+__pycache__
+*.pyc

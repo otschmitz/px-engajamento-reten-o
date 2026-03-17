@@ -1,0 +1,273 @@
+Perfeito. Nesse caso, o ideal não é usar Bom / Ruim / Péssimo, porque isso avalia o estado da métrica.
+Para avaliar impacto percebido no contexto de engajamento e retenção, o melhor é usar uma escala Likert de impacto.
+
+Escala sugerida
+
+Para cada métrica, a pessoa responde:
+
+Qual o impacto desta métrica sobre engajamento e retenção dos motoristas?
+
+Escala Likert de 5 pontos:
+
+Nenhum impacto
+
+Baixo impacto
+
+Impacto moderado
+
+Alto impacto
+
+Impacto muito alto
+
+Instrução do formulário
+
+Instrução ao respondente:
+Avalie o quanto cada item abaixo impacta o engajamento e a retenção dos motoristas na plataforma.
+Considere “engajamento” como participação ativa do motorista no app e nas operações, e “retenção” como permanência e continuidade de uso ao longo do tempo.
+
+Questionário — Impacto das Métricas em Engajamento e Retenção
+1. Base Cadastral
+
+1.1 Perfil completo do motorista
+Qual o impacto de manter o perfil do motorista completo e atualizado sobre o engajamento e a retenção?
+
+1.1b Endereço do motorista com coordenadas geográficas
+Qual o impacto de ter a localização do motorista corretamente registrada sobre o engajamento e a retenção?
+
+1.1c Cidades onde o motorista opera
+Qual o impacto de conhecer corretamente as cidades em que o motorista atua sobre o engajamento e a retenção?
+
+2. Atividade no App
+
+2.1 Último acesso ao app por motorista
+Qual o impacto da frequência de acesso do motorista ao app sobre o engajamento e a retenção?
+
+2.2 Sessões detalhadas do motorista no app
+Qual o impacto do padrão de uso do motorista no app sobre o engajamento e a retenção?
+
+2.3 Notificações recebidas, abertas e visualizadas
+Qual o impacto da abertura e visualização de notificações sobre o engajamento e a retenção?
+
+2.4 Tracking de notificações
+Qual o impacto do tempo que o motorista leva para abrir, visualizar e agir sobre notificações no engajamento e na retenção?
+
+3. Operação e Fretes
+
+3.1 Visualizações e candidaturas a fretes
+Qual o impacto do interesse demonstrado em fretes, por visualizações e candidaturas, sobre o engajamento e a retenção?
+
+3.2 Contratos concluídos por motorista
+Qual o impacto da quantidade de contratos concluídos sobre o engajamento e a retenção?
+
+3.3 Contratos cancelados ou inativos
+Qual o impacto de contratos cancelados ou inativos sobre o engajamento e a retenção?
+
+3.4 Remoções de motorista de contrato
+Qual o impacto de remoções de motorista de contrato, como no-show ou desistência, sobre o engajamento e a retenção?
+
+3.5 Tempo entre cadastro e primeiro frete
+Qual o impacto do tempo até o primeiro frete sobre o engajamento e a retenção?
+
+3.6 Tempo médio entre fretes consecutivos
+Qual o impacto do intervalo entre fretes consecutivos sobre o engajamento e a retenção?
+
+4. Convites
+
+4.1 Convites recebidos, aceitos e recusados
+Qual o impacto da dinâmica de convites recebidos, aceitos e recusados sobre o engajamento e a retenção?
+
+5. Retenção
+
+5.1 Retenção D7 / D15 / D30 / D60 / D90
+Qual o impacto da retenção dos motoristas ao longo do tempo sobre o engajamento e a permanência na plataforma?
+
+5.2 Churn por janela temporal
+Qual o impacto do churn por períodos sem frete sobre o engajamento e a retenção?
+
+5.3 Retenção operacional
+Qual o impacto da progressão do motorista do primeiro para os próximos fretes sobre o engajamento e a retenção?
+
+5.4 Retenção por coorte mensal
+Qual o impacto da retenção por coorte mensal sobre a compreensão e melhoria do engajamento e da retenção?
+
+6. Engajamento
+
+6.1 DAU / WAU / MAU baseado em último acesso
+Qual o impacto da frequência de uso do app sobre o engajamento e a retenção?
+
+6.2 Engajamento com ofertas
+Qual o impacto da interação do motorista com ofertas sobre o engajamento e a retenção?
+
+6.3 Engajamento transacional semanal
+Qual o impacto da atividade operacional semanal sobre o engajamento e a retenção?
+
+7. Financeiro
+
+7.1 Faturamento mensal por motorista
+Qual o impacto do faturamento mensal do motorista sobre o engajamento e a retenção?
+
+7.2 Pagamentos e adiantamentos
+Qual o impacto da experiência com pagamentos e adiantamentos sobre o engajamento e a retenção?
+
+7.3 Extratos financeiros
+Qual o impacto da clareza dos extratos financeiros sobre o engajamento e a retenção?
+
+7.4 Descontos e glosas
+Qual o impacto de descontos e glosas sobre o engajamento e a retenção?
+
+8. Qualidade e Experiência
+
+8.1 Avaliações recebidas pelo motorista
+Qual o impacto das avaliações recebidas pelo motorista sobre o engajamento e a retenção?
+
+8.2 Avaliações dadas pelo motorista
+Qual o impacto da experiência do motorista ao avaliar empresas sobre o engajamento e a retenção?
+
+8.3 Taxa de atendimento do motorista
+Qual o impacto da taxa de atendimento do motorista sobre o engajamento e a retenção?
+
+9. Ocorrências Operacionais
+
+9.1 Ocorrências comportamentais
+Qual o impacto de ocorrências comportamentais sobre o engajamento e a retenção?
+
+9.2 Ocorrências de contrato
+Qual o impacto de acidentes, multas e outros problemas contratuais sobre o engajamento e a retenção?
+
+10. Risco de Churn
+
+10.1 Sinais clássicos de churn
+Qual o impacto dos sinais clássicos de churn sobre o engajamento e a retenção?
+
+10.2 Queda de atividade
+Qual o impacto da queda recente de atividade sobre o engajamento e a retenção?
+
+10.3 Documentos próximos do vencimento
+Qual o impacto de documentos próximos do vencimento, como a CNH, sobre o engajamento e a retenção?
+
+10.4 Verificação de risco GR
+Qual o impacto das condições de gerenciamento de risco sobre o engajamento e a retenção?
+
+10.5 Queda de faturamento
+Qual o impacto da queda de faturamento sobre o engajamento e a retenção?
+
+11. Preferências Comportamentais
+
+11.1 Preferências cadastradas pelo motorista
+Qual o impacto de conhecer as preferências declaradas do motorista sobre o engajamento e a retenção?
+
+11.2 Preferências inferidas por comportamento
+Qual o impacto de inferir preferências reais pelo comportamento do motorista sobre o engajamento e a retenção?
+
+11.3 Preferência por tipo de contrato
+Qual o impacto de compreender a preferência do motorista por tipo de contrato sobre o engajamento e a retenção?
+
+12. Férias e Inatividade
+
+12.1 Motoristas em férias ou retorno ao regime CLT
+Qual o impacto de identificar corretamente períodos de férias ou retorno ao CLT sobre o engajamento e a retenção?
+
+13. Geolocalização e Distância
+
+13.1 Distância do motorista ao ponto de coleta
+Qual o impacto da distância entre o motorista e o ponto de coleta sobre o engajamento e a retenção?
+
+13.2 Distância média aceita
+Qual o impacto do raio operacional aceito pelo motorista sobre o engajamento e a retenção?
+
+14. Eventos de Contrato
+
+14.1 Eventos de contrato por motorista
+Qual o impacto do acompanhamento de eventos do contrato sobre o engajamento e a retenção?
+
+14.2 Tipos e labels de eventos
+Qual o impacto de classificar corretamente os eventos de contrato sobre o engajamento e a retenção?
+
+15. Score de Habitualidade
+
+15.1 Score de habitualidade por motorista e grupo econômico
+Qual o impacto do score de habitualidade sobre o engajamento e a retenção?
+
+15.2 Composição histórica do score
+Qual o impacto do histórico de composição do score de habitualidade sobre o engajamento e a retenção?
+
+16. Score do Motorista
+
+16.1 Score atual do motorista
+Qual o impacto do score atual do motorista sobre o engajamento e a retenção?
+
+16.2 Histórico de composição do score
+Qual o impacto do histórico de composição do score do motorista sobre o engajamento e a retenção?
+
+17. Blacklist
+
+17.1 Bloqueios de motoristas por empresa
+Qual o impacto dos bloqueios de motoristas por empresa sobre o engajamento e a retenção?
+
+18. Score de Risco Composto
+
+18.1 Score de risco de churn composto
+Qual o impacto de um score composto de risco de churn sobre o engajamento e a retenção?
+
+19. Alertas Automatizados
+
+19.1 Motorista com 14 dias sem login
+Qual o impacto de monitorar motoristas com 14 dias sem login sobre o engajamento e a retenção?
+
+19.2 Motorista com 30 dias sem frete
+Qual o impacto de monitorar motoristas com 30 dias sem frete sobre o engajamento e a retenção?
+
+19.3 Motorista com queda de 50% nas candidaturas
+Qual o impacto de monitorar quedas fortes nas candidaturas sobre o engajamento e a retenção?
+
+19.4 Motorista de alto valor com risco de evasão
+Qual o impacto de identificar motoristas de alto valor com risco de evasão sobre o engajamento e a retenção?
+
+19.5 CNH próxima do vencimento (7 dias)
+Qual o impacto de alertar sobre CNH próxima do vencimento sobre o engajamento e a retenção?
+
+19.6 Motorista recebendo poucas ofertas aderentes
+Qual o impacto de identificar motoristas recebendo poucas ofertas aderentes sobre o engajamento e a retenção?
+
+19.7 Motorista com ocorrência recente e risco de abandono
+Qual o impacto de identificar motoristas com ocorrência recente e risco de abandono sobre o engajamento e a retenção?
+
+20. Aderência Oferta–Perfil
+
+20.1 Match entre preferências do motorista e características do frete
+Qual o impacto da aderência entre perfil do motorista e frete ofertado sobre o engajamento e a retenção?
+
+21. Painel Consolidado
+
+21.1 Painel unificado por motorista
+Qual o impacto de ter uma visão consolidada do motorista em um único painel sobre o engajamento e a retenção?
+
+Fechamento recomendado
+
+No final, você pode incluir mais 2 perguntas:
+
+1. Quais métricas você considera de maior impacto em engajamento?
+2. Quais métricas você considera de maior impacto em retenção?
+
+Recomendação metodológica
+
+Para ficar mais forte analiticamente, eu sugiro separar em duas avaliações por item:
+
+Impacto no engajamento
+
+Impacto na retenção
+
+Porque engajamento e retenção são relacionados, mas não são a mesma coisa.
+Exemplo:
+
+1.1 Perfil completo do motorista
+
+Qual o impacto desta métrica sobre o engajamento?
+
+Qual o impacto desta métrica sobre a retenção?
+
+Isso deixa o instrumento muito melhor para análise posterior.
+
+Posso montar a próxima versão já em formato de tabela, com colunas:
+
+métrica | pergunta sobre engajamento | pergunta sobre retenção | escala Likert

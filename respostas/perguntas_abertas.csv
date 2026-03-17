@@ -1,0 +1,11 @@
+timestamp,area_atuacao,tempo_atuacao,proximidade_motorista,maior_impacto_engajamento,maior_impacto_retencao
+2026-03-17T11:42:47.201Z,Logistica,12-18,varias_dia,Retencao operacional e DAU/MAU,Distancia ao ponto de coleta
+2026-03-17T11:42:54.030Z,RH,36-42,sem_contato,Score do motorista,Alertas automatizados
+2026-03-17T11:43:02.336Z,Produto,18-24,menos_1_mes,Contratos concluidos e faturamento,Bloqueios por empresa
+2026-03-17T11:43:10.729Z,Tecnologia,42-48,menos_1_mes,Score de habitualidade,Distancia ao ponto de coleta
+2026-03-17T11:43:18.546Z,Data Science,36-42,1_semana,Notificacoes e sessoes no app,Sinais classicos de churn
+2026-03-17T11:43:26.848Z,Tecnologia,36-42,varias_dia,Contratos concluidos e faturamento,Sinais classicos de churn
+2026-03-17T11:43:34.621Z,Marketing,36-42,1_dia,Score de habitualidade,Faturamento mensal e pagamentos
+2026-03-17T11:43:42.425Z,Marketing,54-60,menos_1_mes,Score do motorista,CNH vencendo e documentos
+2026-03-17T11:43:50.226Z,Marketing,36-42,menos_1_mes,Tempo ate primeiro frete,CNH vencendo e documentos
+2026-03-17T11:43:58.591Z,Logistica,18-24,menos_1_mes,Perfil completo e preferencias,Alertas automatizados

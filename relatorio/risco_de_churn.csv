@@ -1,0 +1,6 @@
+timestamp,secao,id,metrica,impacto_engajamento,impacto_retencao
+2026-03-17T03:29:26.626Z,10. Risco de Churn,10.1,Sinais classicos de churn,3,3
+2026-03-17T03:29:26.626Z,10. Risco de Churn,10.2,Queda de atividade,3,3
+2026-03-17T03:29:26.626Z,10. Risco de Churn,10.3,Documentos proximos do vencimento,3,3
+2026-03-17T03:29:26.626Z,10. Risco de Churn,10.4,Verificacao de risco GR,3,3
+2026-03-17T03:29:26.626Z,10. Risco de Churn,10.5,Queda de faturamento,3,3

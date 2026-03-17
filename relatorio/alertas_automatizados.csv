@@ -1,0 +1,8 @@
+timestamp,secao,id,metrica,impacto_engajamento,impacto_retencao
+2026-03-17T03:29:26.626Z,19. Alertas Automatizados,19.1,Motorista com 14 dias sem login,3,3
+2026-03-17T03:29:26.626Z,19. Alertas Automatizados,19.2,Motorista com 30 dias sem frete,3,3
+2026-03-17T03:29:26.626Z,19. Alertas Automatizados,19.3,Queda de 50% nas candidaturas,3,3
+2026-03-17T03:29:26.626Z,19. Alertas Automatizados,19.4,Motorista de alto valor com risco de evasao,3,3
+2026-03-17T03:29:26.626Z,19. Alertas Automatizados,19.5,CNH proxima do vencimento (7 dias),3,3
+2026-03-17T03:29:26.626Z,19. Alertas Automatizados,19.6,Poucas ofertas aderentes,3,3
+2026-03-17T03:29:26.626Z,19. Alertas Automatizados,19.7,Ocorrencia recente e risco de abandono,3,3

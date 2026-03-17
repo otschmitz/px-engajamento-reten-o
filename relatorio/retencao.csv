@@ -1,0 +1,5 @@
+timestamp,secao,id,metrica,impacto_engajamento,impacto_retencao
+2026-03-17T03:29:26.626Z,5. Retencao,5.1,Retencao D7 / D15 / D30 / D60 / D90,3,3
+2026-03-17T03:29:26.626Z,5. Retencao,5.2,Churn por janela temporal,3,3
+2026-03-17T03:29:26.626Z,5. Retencao,5.3,Retencao operacional,3,3
+2026-03-17T03:29:26.626Z,5. Retencao,5.4,Retencao por coorte mensal,3,3

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey — Engajamento e Retencao</title>
+    <style>
+        /* === PX.CENTER BRAND === */
+        :root {
+            --px-navy: #1B3A5C;
+            --px-blue: #2980B9;
+            --px-blue-light: #3498DB;
+            --px-orange: #E67E22;
+            --px-bg: #F0F4F8;
+            --px-card-bg: #FFFFFF;
+            --px-card-border: #DCE3EA;
+            --px-text: #1B3A5C;
+            --px-text-light: #5A7A9A;
+            --px-accent-bar: #2980B9;
+            --px-green: #0D652D;
+            --px-red: #C0392B;
+            --px-highlight-bg: #EAF2FA;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+            background: var(--px-bg);
+            color: var(--px-text);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .wrap {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        /* === CARDS === */
+        .card {
+            background: var(--px-card-bg);
+            border: 1px solid var(--px-card-border);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(27,58,92,0.06);
+        }
+
+        .card-header {
+            border-top: none;
+            border-radius: 8px 8px 0 0;
+            padding: 28px 28px 20px;
+            background: var(--px-navy);
+            color: #fff;
+        }
+
+        .card-header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .card-header p {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+        }
+
+        .card-header .req {
+            color: rgba(255,255,255,0.6);
+            font-size: 13px;
+            margin-top: 14px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 12px;
+        }
+
+        .card-header .time-hint {
+            color: var(--px-blue-light);
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        /* === PROGRESS === */
+        .progress-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            background: var(--px-card-bg);
+            border-bottom: 1px solid var(--px-card-border);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 1px 4px rgba(27,58,92,0.08);
+        }
+
+        .progress-count {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--px-text-light);
+            white-space: nowrap;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 6px;
+            background: #DCE3EA;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--px-blue);
+            border-radius: 3px;
+            transition: width 0.3s;
+        }
+
+        .progress-pct {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--px-blue);
+            white-space: nowrap;
+        }
+
+        /* === SECTION === */
+        .section-card {
+            padding: 0;
+            border-left: 4px solid var(--px-accent-bar);
+        }
+
+        .section-title {
+            padding: 20px 24px 8px;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--px-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .grid-label {
+            padding: 14px 24px 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .grid-label-eng { color: var(--px-blue); }
+        .grid-label-ret { color: var(--px-orange); }
+
+        /* === LIKERT GRID === */
+        .likert-grid {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .likert-grid thead td {
+            font-size: 11px;
+            color: var(--px-text-light);
+            text-align: center;
+            padding: 8px 0;
+            font-weight: 600;
+        }
+
+        .likert-grid thead td:first-child {
+            text-align: left;
+            padding-left: 24px;
+        }
+
+        .likert-grid colgroup .col-label { width: 40%; }
+        .likert-grid colgroup .col-opt { width: 12%; }
+
+        .likert-grid tbody tr {
+            border-top: 1px solid #EDF1F5;
+        }
+
+        .likert-grid tbody tr:hover {
+            background: var(--px-highlight-bg);
+        }
+
+        .likert-grid tbody td {
+            padding: 12px 0;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .likert-grid tbody td:first-child {
+            text-align: left;
+            padding-left: 24px;
+            padding-right: 8px;
+            font-size: 13px;
+            color: var(--px-text);
+        }
+
+        /* Radio buttons */
+        .likert-grid input[type="radio"] { display: none; }
+
+        .g-radio {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #9BB0C7;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            transition: border-color 0.2s;
+        }
+
+        .g-radio:hover {
+            border-color: var(--px-navy);
+        }
+
+        .g-radio::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: transparent;
+            transition: background 0.15s;
+        }
+
+        input[type="radio"]:checked + .g-radio {
+            border-color: var(--px-blue);
+        }
+
+        input[type="radio"]:checked + .g-radio::after {
+            background: var(--px-blue);
+        }
+
+        .grid-eng input[type="radio"]:checked + .g-radio {
+            border-color: var(--px-blue);
+        }
+        .grid-eng input[type="radio"]:checked + .g-radio::after {
+            background: var(--px-blue);
+        }
+
+        .grid-ret input[type="radio"]:checked + .g-radio {
+            border-color: var(--px-orange);
+        }
+        .grid-ret input[type="radio"]:checked + .g-radio::after {
+            background: var(--px-orange);
+        }
+
+        tr.unanswered td:first-child {
+            color: var(--px-red);
+        }
+
+        /* === OPEN TEXT === */
+        .open-card {
+            padding: 22px 24px;
+        }
+
+        .open-card label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--px-navy);
+        }
+
+        .open-card label span { color: var(--px-text-light); font-weight: 400; }
+
+        .open-card input[type="text"] {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid var(--px-card-border);
+            padding: 8px 0;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+            color: var(--px-text);
+        }
+
+        .open-card input[type="text"]:focus {
+            border-bottom: 2px solid var(--px-blue);
+            margin-bottom: -1px;
+        }
+
+        /* === SUBMIT === */
+        .submit-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+        }
+
+        .btn-submit {
+            background: var(--px-navy);
+            color: white;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            letter-spacing: 0.25px;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover { background: #244d73; box-shadow: 0 2px 6px rgba(27,58,92,0.25); }
+        .btn-submit:disabled { background: #9BB0C7; cursor: default; box-shadow: none; }
+
+        .btn-clear {
+            background: none;
+            border: none;
+            color: var(--px-blue);
+            font-size: 14px;
+            font-weight: 500;
+            font-family: inherit;
+            cursor: pointer;
+            padding: 10px 12px;
+            border-radius: 4px;
+        }
+
+        .btn-clear:hover { background: var(--px-highlight-bg); }
+
+        /* Alert */
+        .alert {
+            background: #FDEDEC;
+            color: var(--px-red);
+            padding: 12px 24px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            display: none;
+            border: 1px solid #F5C6CB;
+        }
+        .alert.show { display: block; }
+
+        /* Thank you */
+        .thankyou { display: none; text-align: center; padding: 48px 24px; }
+        .thankyou h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; color: var(--px-navy); }
+        .thankyou p { color: var(--px-text-light); margin-bottom: 20px; }
+
+        /* Autosave */
+        .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--px-navy); color: #fff; padding: 8px 16px; border-radius: 4px; font-size: 13px; opacity: 0; transition: opacity 0.3s; z-index: 100; pointer-events: none; }
+        .toast.show { opacity: 1; }
+
+        /* === IDENTIFICATION FIELDS === */
+        .id-field {
+            margin-bottom: 16px;
+        }
+
+        .id-field label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--px-navy);
+            margin-bottom: 6px;
+        }
+
+        .id-field label .req-star {
+            color: var(--px-red);
+        }
+
+        .id-field input[type="text"],
+        .id-field select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--px-card-border);
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--px-text);
+            background: #fff;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .id-field input[type="text"]:focus,
+        .id-field select:focus {
+            border-color: var(--px-blue);
+            box-shadow: 0 0 0 2px rgba(41,128,185,0.15);
+        }
+
+        .id-field.error input,
+        .id-field.error select {
+            border-color: var(--px-red);
+        }
+
+        .id-field .error-msg {
+            color: var(--px-red);
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .id-field.error .error-msg {
+            display: block;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 1px 8px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-top: 2px;
+        }
+        .badge-eng { background: var(--px-blue); }
+        .badge-ret { background: var(--px-orange); }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 16px 0 24px;
+            font-size: 11px;
+            color: var(--px-text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 640px) {
+            .wrap { padding: 8px; }
+            .card { border-radius: 6px; }
+            .card-header { border-radius: 6px 6px 0 0; padding: 20px 18px 16px; }
+            .card-header h1 { font-size: 22px; }
+            .likert-grid thead td { font-size: 9px; }
+            .likert-grid tbody td:first-child { font-size: 12px; padding-left: 14px; }
+            .g-radio { width: 18px; height: 18px; }
+            .g-radio::after { top: 3px; left: 3px; width: 8px; height: 8px; }
+            .section-title { padding-left: 16px; font-size: 15px; }
+            .grid-label { padding-left: 16px; }
+            .section-card { border-left-width: 3px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="progress-wrap">
+    <span class="progress-count" id="pcount">0/58</span>
+    <div class="progress-bar"><div class="progress-fill" id="pbar"></div></div>
+    <span class="progress-pct" id="ppct">0%</span>
+</div>
+<div class="toast" id="toast">Progresso salvo</div>
+
+<div class="wrap" id="formWrap">
+    <div class="card">
+        <div class="card-header">
+            <h1 style="text-transform: uppercase;">Impacto das Metricas em Engajamento e Retencao</h1>
+            <p>Para cada metrica, avalie o impacto no <strong>engajamento</strong> e na <strong>retencao</strong> dos motoristas.</p>
+            <div class="time-hint">~5 minutos · Progresso salvo automaticamente</div>
+            <div class="req">* Indica uma pergunta obrigatoria</div>
+        </div>
+    </div>
+
+    <div class="alert" id="alert"></div>
+
+    <div class="card section-card">
+        <div class="section-title">Identificacao do Respondente</div>
+        <div style="padding: 12px 24px 20px;">
+            <div class="id-field" id="field_area">
+                <label>Area em que atua <span class="req-star">*</span></label>
+                <input type="text" id="id_area" placeholder="Ex: Operacoes, Produto, Comercial...">
+                <div class="error-msg">Preencha a area em que atua</div>
+            </div>
+            <div class="id-field" id="field_tempo">
+                <label>Ha quanto tempo atua nesta area <span class="req-star">*</span></label>
+                <select id="id_tempo">
+                    <option value="">Selecione...</option>
+                    <option value="0-6">Menos de 6 meses</option>
+                    <option value="6-12">6 meses a 1 ano</option>
+                    <option value="12-18">1 ano a 1 ano e meio</option>
+                    <option value="18-24">1 ano e meio a 2 anos</option>
+                    <option value="24-30">2 anos a 2 anos e meio</option>
+                    <option value="30-36">2 anos e meio a 3 anos</option>
+                    <option value="36-42">3 anos a 3 anos e meio</option>
+                    <option value="42-48">3 anos e meio a 4 anos</option>
+                    <option value="48-54">4 anos a 4 anos e meio</option>
+                    <option value="54-60">4 anos e meio a 5 anos</option>
+                    <option value="60+">Mais de 5 anos</option>
+                </select>
+                <div class="error-msg">Selecione o tempo de atuacao</div>
+            </div>
+            <div class="id-field" id="field_proximidade">
+                <label>Nivel de proximidade com o motorista <span class="req-star">*</span></label>
+                <select id="id_proximidade">
+                    <option value="">Selecione...</option>
+                    <option value="varias_dia">Varias vezes por dia — tenho contato direto com motoristas repetidamente ao longo do dia</option>
+                    <option value="1_dia">Pelo menos 1 vez por dia — interajo com motoristas todos ou quase todos os dias</option>
+                    <option value="1_semana">Pelo menos 1 vez por semana — tenho contato recorrente, mas nao diario</option>
+                    <option value="1_mes">Pelo menos 1 vez por mes — acompanho motoristas ocasionalmente</option>
+                    <option value="menos_1_mes">Menos de 1 vez por mes — raramente tenho contato com motoristas</option>
+                    <option value="sem_contato">Sem contato direto — minha visao e indireta, por relatorios, sistema ou equipe</option>
+                </select>
+                <div class="error-msg">Selecione o nivel de proximidade</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sections"></div>
+
+    <div class="card">
+        <div class="open-card">
+            <label>Quais metricas de maior impacto em engajamento? <span>(opcional)</span></label>
+            <input type="text" id="open_eng" placeholder="Sua resposta">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="open-card">
+            <label>Quais metricas de maior impacto em retencao? <span>(opcional)</span></label>
+            <input type="text" id="open_ret" placeholder="Sua resposta">
+        </div>
+    </div>
+
+    <div class="submit-row">
+        <button class="btn-submit" id="submitBtn" onclick="submit()">Enviar</button>
+        <button class="btn-clear" onclick="clearAll()">Limpar formulario</button>
+    </div>
+
+    <div class="footer">DATA SCIENCE · PX.CENTER</div>
+</div>
+
+<div class="wrap thankyou" id="thankyou">
+    <h2>Resposta registrada</h2>
+    <p>Obrigado pela sua contribuicao.</p>
+    <button class="btn-clear" onclick="downloadCSV()">Baixar minha resposta</button>
+    <br><br>
+    <a class="btn-clear" href="javascript:location.reload()">Enviar outra resposta</a>
+</div>
+
+<script>
+const SC = ['Nenhum','Baixo','Moderado','Alto','Muito alto'];
+
+const D = [
+  {t:'1. Base Cadastral',q:[{i:'1.1',m:'Perfil completo do motorista'},{i:'1.1b',m:'Endereco com coordenadas'},{i:'1.1c',m:'Cidades onde opera'}]},
+  {t:'2. Atividade no App',q:[{i:'2.1',m:'Ultimo acesso ao app'},{i:'2.2',m:'Sessoes detalhadas'},{i:'2.3',m:'Notificacoes abertas'},{i:'2.4',m:'Tracking de notificacoes'}]},
+  {t:'3. Operacao e Fretes',q:[{i:'3.1',m:'Visualizacoes e candidaturas'},{i:'3.2',m:'Contratos concluidos'},{i:'3.3',m:'Contratos cancelados'},{i:'3.4',m:'Remocoes de contrato'},{i:'3.5',m:'Tempo ate primeiro frete'},{i:'3.6',m:'Intervalo entre fretes'}]},
+  {t:'4. Convites',q:[{i:'4.1',m:'Convites recebidos/aceitos/recusados'}]},
+  {t:'5. Retencao',q:[{i:'5.1',m:'Retencao D7/D15/D30/D60/D90'},{i:'5.2',m:'Churn por janela temporal'},{i:'5.3',m:'Retencao operacional'},{i:'5.4',m:'Retencao por coorte mensal'}]},
+  {t:'6. Engajamento',q:[{i:'6.1',m:'DAU / WAU / MAU'},{i:'6.2',m:'Engajamento com ofertas'},{i:'6.3',m:'Engajamento transacional semanal'}]},
+  {t:'7. Financeiro',q:[{i:'7.1',m:'Faturamento mensal'},{i:'7.2',m:'Pagamentos e adiantamentos'},{i:'7.3',m:'Extratos financeiros'},{i:'7.4',m:'Descontos e glosas'}]},
+  {t:'8. Qualidade e Experiencia',q:[{i:'8.1',m:'Avaliacoes recebidas'},{i:'8.2',m:'Avaliacoes dadas'},{i:'8.3',m:'Taxa de atendimento'}]},
+  {t:'9. Ocorrencias Operacionais',q:[{i:'9.1',m:'Ocorrencias comportamentais'},{i:'9.2',m:'Ocorrencias de contrato'}]},
+  {t:'10. Risco de Churn',q:[{i:'10.1',m:'Sinais classicos de churn'},{i:'10.2',m:'Queda de atividade'},{i:'10.3',m:'Documentos vencendo'},{i:'10.4',m:'Risco GR'},{i:'10.5',m:'Queda de faturamento'}]},
+  {t:'11. Preferencias',q:[{i:'11.1',m:'Preferencias cadastradas'},{i:'11.2',m:'Preferencias inferidas'},{i:'11.3',m:'Preferencia tipo contrato'}]},
+  {t:'12. Ferias e Inatividade',q:[{i:'12.1',m:'Ferias ou retorno ao CLT'}]},
+  {t:'13. Geolocalizacao',q:[{i:'13.1',m:'Distancia ao ponto de coleta'},{i:'13.2',m:'Distancia media aceita'}]},
+  {t:'14. Eventos de Contrato',q:[{i:'14.1',m:'Eventos por motorista'},{i:'14.2',m:'Tipos e labels de eventos'}]},
+  {t:'15. Score de Habitualidade',q:[{i:'15.1',m:'Score de habitualidade'},{i:'15.2',m:'Historico do score'}]},
+  {t:'16. Score do Motorista',q:[{i:'16.1',m:'Score atual'},{i:'16.2',m:'Historico do score'}]},
+  {t:'17. Blacklist',q:[{i:'17.1',m:'Bloqueios por empresa'}]},
+  {t:'18. Score de Risco Composto',q:[{i:'18.1',m:'Score composto de churn'}]},
+  {t:'19. Alertas Automatizados',q:[{i:'19.1',m:'14 dias sem login'},{i:'19.2',m:'30 dias sem frete'},{i:'19.3',m:'Queda 50% candidaturas'},{i:'19.4',m:'Alto valor + risco evasao'},{i:'19.5',m:'CNH vencendo (7 dias)'},{i:'19.6',m:'Poucas ofertas aderentes'},{i:'19.7',m:'Ocorrencia recente + risco'}]},
+  {t:'20. Aderencia Oferta-Perfil',q:[{i:'20.1',m:'Match preferencias x frete'}]},
+];
+
+let totalQ = 0;
+
+function grid(qs, prefix, cls) {
+    const badgeCls = prefix === 'eng' ? 'badge-eng' : 'badge-ret';
+    const badgeLabel = prefix === 'eng' ? 'Eng' : 'Ret';
+    let h = `<table class="likert-grid ${cls}"><colgroup><col class="col-label">`;
+    for (let c = 0; c < 5; c++) h += `<col class="col-opt">`;
+    h += `</colgroup><thead><tr><td></td>`;
+    SC.forEach(s => { h += `<td>${s}</td>`; });
+    h += `</tr></thead><tbody>`;
+    qs.forEach(q => {
+        const sid = q.i.replace(/\./g,'_');
+        h += `<tr data-rid="${prefix}_${sid}">`;
+        h += `<td><strong>${q.m}</strong><br><span class="badge ${badgeCls}">${badgeLabel}</span></td>`;
+        SC.forEach((_, v) => {
+            h += `<td><label><input type="radio" name="${prefix}_${sid}" value="${v+1}" onchange="pick(this)"><span class="g-radio"></span></label></td>`;
+        });
+        h += `</tr>`;
+    });
+    h += `</tbody></table>`;
+    return h;
+}
+
+function build() {
+    const el = document.getElementById('sections');
+    let html = '';
+    D.forEach(sec => {
+        totalQ += sec.q.length;
+        html += `<div class="card section-card">`;
+        html += `<div class="section-title">${sec.t}</div>`;
+        html += `<div class="grid-label grid-label-eng">Impacto no Engajamento</div>`;
+        html += grid(sec.q, 'eng', 'grid-eng');
+        html += `<div class="grid-label grid-label-ret" style="margin-top:8px;">Impacto na Retencao</div>`;
+        html += grid(sec.q, 'ret', 'grid-ret');
+        html += `</div>`;
+    });
+    el.innerHTML = html;
+}
+
+function countDone() {
+    let n = 0;
+    D.forEach(s => s.q.forEach(q => {
+        const sid = q.i.replace(/\./g,'_');
+        if (document.querySelector(`input[name="eng_${sid}"]:checked`) &&
+            document.querySelector(`input[name="ret_${sid}"]:checked`)) n++;
+    }));
+    return n;
+}
+
+function updateProgress() {
+    const done = countDone();
+    const pct = totalQ ? Math.round(done/totalQ*100) : 0;
+    document.getElementById('pbar').style.width = pct+'%';
+    document.getElementById('pcount').textContent = done+'/'+totalQ;
+    document.getElementById('ppct').textContent = pct+'%';
+}
+
+function pick(el) {
+    el.closest('tr').classList.remove('unanswered');
+    updateProgress();
+    save();
+}
+
+function save() {
+    const st = {a:{}};
+    document.querySelectorAll('input[type="radio"]:checked').forEach(r => { st.a[r.name]=r.value; });
+    st.oe = document.getElementById('open_eng').value;
+    st.or = document.getElementById('open_ret').value;
+    st.area = document.getElementById('id_area').value;
+    st.tempo = document.getElementById('id_tempo').value;
+    st.prox = document.getElementById('id_proximidade').value;
+    localStorage.setItem('sv3', JSON.stringify(st));
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 1000);
+}
+
+function load() {
+    const r = localStorage.getItem('sv3');
+    if (!r) return;
+    try {
+        const s = JSON.parse(r);
+        for (const [k,v] of Object.entries(s.a||{})) {
+            const el = document.querySelector(`input[name="${k}"][value="${v}"]`);
+            if (el) el.checked = true;
+        }
+        if (s.oe) document.getElementById('open_eng').value = s.oe;
+        if (s.or) document.getElementById('open_ret').value = s.or;
+        if (s.area) document.getElementById('id_area').value = s.area;
+        if (s.tempo) document.getElementById('id_tempo').value = s.tempo;
+        if (s.prox) document.getElementById('id_proximidade').value = s.prox;
+        updateProgress();
+    } catch(e){}
+}
+
+function clearAll() {
+    if (!confirm('Limpar todas as respostas?')) return;
+    document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+    document.getElementById('open_eng').value = '';
+    document.getElementById('open_ret').value = '';
+    document.getElementById('id_area').value = '';
+    document.getElementById('id_tempo').value = '';
+    document.getElementById('id_proximidade').value = '';
+    localStorage.removeItem('sv3');
+    updateProgress();
+}
+
+function collect() {
+    const data = [];
+    D.forEach(s => s.q.forEach(q => {
+        const sid = q.i.replace(/\./g,'_');
+        const e = document.querySelector(`input[name="eng_${sid}"]:checked`);
+        const r = document.querySelector(`input[name="ret_${sid}"]:checked`);
+        data.push({secao:s.t, id:q.i, metrica:q.m, engajamento:e?+e.value:null, retencao:r?+r.value:null});
+    }));
+    return data;
+}
+
+function submit() {
+    const data = collect();
+    let miss = 0;
+    document.querySelectorAll('tr.unanswered').forEach(r => r.classList.remove('unanswered'));
+
+    // Validar identificacao
+    const area = document.getElementById('id_area').value.trim();
+    const tempo = document.getElementById('id_tempo').value;
+    const proximidade = document.getElementById('id_proximidade').value;
+    const fArea = document.getElementById('field_area');
+    const fTempo = document.getElementById('field_tempo');
+    const fProx = document.getElementById('field_proximidade');
+    fArea.classList.remove('error');
+    fTempo.classList.remove('error');
+    fProx.classList.remove('error');
+
+    if (!area) { miss++; fArea.classList.add('error'); }
+    if (!tempo) { miss++; fTempo.classList.add('error'); }
+    if (!proximidade) { miss++; fProx.classList.add('error'); }
+
+    data.forEach(r => {
+        const sid = r.id.replace(/\./g,'_');
+        if (!r.engajamento) { miss++; document.querySelector(`tr[data-rid="eng_${sid}"]`)?.classList.add('unanswered'); }
+        if (!r.retencao) { miss++; document.querySelector(`tr[data-rid="ret_${sid}"]`)?.classList.add('unanswered'); }
+    });
+
+    const al = document.getElementById('alert');
+    if (miss) {
+        al.textContent = `Preencha todas as perguntas obrigatorias (${miss} faltando).`;
+        al.classList.add('show');
+        const firstErr = document.querySelector('.id-field.error') || document.querySelector('tr.unanswered');
+        firstErr?.scrollIntoView({behavior:'smooth',block:'center'});
+        return;
+    }
+    al.classList.remove('show');
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true; btn.textContent = 'Enviando...';
+
+    fetch('/api/respostas', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+            timestamp: new Date().toISOString(),
+            area_atuacao: area,
+            tempo_atuacao: tempo,
+            proximidade_motorista: proximidade,
+            respostas: data,
+            open_engajamento: document.getElementById('open_eng').value,
+            open_retencao: document.getElementById('open_ret').value,
+        })
+    })
+    .then(r => r.json())
+    .then(() => {
+        localStorage.removeItem('sv3');
+        document.getElementById('formWrap').style.display = 'none';
+        document.querySelector('.progress-bar').style.display = 'none';
+        document.getElementById('thankyou').style.display = 'block';
+    })
+    .catch(() => {
+        alert('Erro ao enviar. Tente novamente.');
+        btn.disabled = false; btn.textContent = 'Enviar';
+    });
+}
+
+function downloadCSV() {
+    const data = collect();
+    let csv = 'Secao,ID,Metrica,Engajamento,Retencao\n';
+    data.forEach(r => { csv += `"${r.secao}","${r.id}","${r.metrica}",${r.engajamento||''},${r.retencao||''}\n`; });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}));
+    a.download = 'minha_resposta.csv'; a.click();
+}
+
+build();
+updateProgress();
+load();
+</script>
+</body>
+</html>

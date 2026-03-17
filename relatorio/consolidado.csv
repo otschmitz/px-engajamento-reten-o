@@ -1,0 +1,59 @@
+timestamp,secao,id,metrica,impacto_engajamento,impacto_retencao
+2026-03-17T03:29:26.626Z,1. Base Cadastral,1.1,Perfil completo do motorista,3,3
+2026-03-17T03:29:26.626Z,1. Base Cadastral,1.1b,Endereco com coordenadas geograficas,3,3
+2026-03-17T03:29:26.626Z,1. Base Cadastral,1.1c,Cidades onde o motorista opera,3,3
+2026-03-17T03:29:26.626Z,2. Atividade no App,2.1,Ultimo acesso ao app,3,3
+2026-03-17T03:29:26.626Z,2. Atividade no App,2.2,Sessoes detalhadas no app,3,3
+2026-03-17T03:29:26.626Z,2. Atividade no App,2.3,Notificacoes recebidas e abertas,3,3
+2026-03-17T03:29:26.626Z,2. Atividade no App,2.4,Tracking de notificacoes,3,3
+2026-03-17T03:29:26.626Z,3. Operacao e Fretes,3.1,Visualizacoes e candidaturas a fretes,3,3
+2026-03-17T03:29:26.626Z,3. Operacao e Fretes,3.2,Contratos concluidos,3,3
+2026-03-17T03:29:26.626Z,3. Operacao e Fretes,3.3,Contratos cancelados ou inativos,3,3
+2026-03-17T03:29:26.626Z,3. Operacao e Fretes,3.4,Remocoes de motorista de contrato,3,3
+2026-03-17T03:29:26.626Z,3. Operacao e Fretes,3.5,Tempo entre cadastro e primeiro frete,3,3
+2026-03-17T03:29:26.626Z,3. Operacao e Fretes,3.6,Tempo medio entre fretes consecutivos,3,3
+2026-03-17T03:29:26.626Z,4. Convites,4.1,"Convites recebidos, aceitos e recusados",3,3
+2026-03-17T03:29:26.626Z,5. Retencao,5.1,Retencao D7 / D15 / D30 / D60 / D90,3,3
+2026-03-17T03:29:26.626Z,5. Retencao,5.2,Churn por janela temporal,3,3
+2026-03-17T03:29:26.626Z,5. Retencao,5.3,Retencao operacional,3,3
+2026-03-17T03:29:26.626Z,5. Retencao,5.4,Retencao por coorte mensal,3,3
+2026-03-17T03:29:26.626Z,6. Engajamento,6.1,DAU / WAU / MAU,3,3
+2026-03-17T03:29:26.626Z,6. Engajamento,6.2,Engajamento com ofertas,3,3
+2026-03-17T03:29:26.626Z,6. Engajamento,6.3,Engajamento transacional semanal,3,3
+2026-03-17T03:29:26.626Z,7. Financeiro,7.1,Faturamento mensal por motorista,3,3
+2026-03-17T03:29:26.626Z,7. Financeiro,7.2,Pagamentos e adiantamentos,3,3
+2026-03-17T03:29:26.626Z,7. Financeiro,7.3,Extratos financeiros,3,3
+2026-03-17T03:29:26.626Z,7. Financeiro,7.4,Descontos e glosas,3,3
+2026-03-17T03:29:26.626Z,8. Qualidade e Experiencia,8.1,Avaliacoes recebidas pelo motorista,3,3
+2026-03-17T03:29:26.626Z,8. Qualidade e Experiencia,8.2,Avaliacoes dadas pelo motorista,3,3
+2026-03-17T03:29:26.626Z,8. Qualidade e Experiencia,8.3,Taxa de atendimento,3,3
+2026-03-17T03:29:26.626Z,9. Ocorrencias Operacionais,9.1,Ocorrencias comportamentais,3,3
+2026-03-17T03:29:26.626Z,9. Ocorrencias Operacionais,9.2,Ocorrencias de contrato,3,3
+2026-03-17T03:29:26.626Z,10. Risco de Churn,10.1,Sinais classicos de churn,3,3
+2026-03-17T03:29:26.626Z,10. Risco de Churn,10.2,Queda de atividade,3,3
+2026-03-17T03:29:26.626Z,10. Risco de Churn,10.3,Documentos proximos do vencimento,3,3
+2026-03-17T03:29:26.626Z,10. Risco de Churn,10.4,Verificacao de risco GR,3,3
+2026-03-17T03:29:26.626Z,10. Risco de Churn,10.5,Queda de faturamento,3,3
+2026-03-17T03:29:26.626Z,11. Preferencias Comportamentais,11.1,Preferencias cadastradas,3,3
+2026-03-17T03:29:26.626Z,11. Preferencias Comportamentais,11.2,Preferencias inferidas por comportamento,3,3
+2026-03-17T03:29:26.626Z,11. Preferencias Comportamentais,11.3,Preferencia por tipo de contrato,3,3
+2026-03-17T03:29:26.626Z,12. Ferias e Inatividade,12.1,Motoristas em ferias ou retorno ao CLT,3,3
+2026-03-17T03:29:26.626Z,13. Geolocalizacao e Distancia,13.1,Distancia ao ponto de coleta,3,3
+2026-03-17T03:29:26.626Z,13. Geolocalizacao e Distancia,13.2,Distancia media aceita,3,3
+2026-03-17T03:29:26.626Z,14. Eventos de Contrato,14.1,Eventos de contrato por motorista,3,3
+2026-03-17T03:29:26.626Z,14. Eventos de Contrato,14.2,Tipos e labels de eventos,3,3
+2026-03-17T03:29:26.626Z,15. Score de Habitualidade,15.1,Score de habitualidade,3,3
+2026-03-17T03:29:26.626Z,15. Score de Habitualidade,15.2,Composicao historica do score,3,3
+2026-03-17T03:29:26.626Z,16. Score do Motorista,16.1,Score atual do motorista,3,3
+2026-03-17T03:29:26.626Z,16. Score do Motorista,16.2,Historico de composicao do score,3,3
+2026-03-17T03:29:26.626Z,17. Blacklist,17.1,Bloqueios de motoristas por empresa,3,3
+2026-03-17T03:29:26.626Z,18. Score de Risco Composto,18.1,Score de risco de churn composto,3,3
+2026-03-17T03:29:26.626Z,19. Alertas Automatizados,19.1,Motorista com 14 dias sem login,3,3
+2026-03-17T03:29:26.626Z,19. Alertas Automatizados,19.2,Motorista com 30 dias sem frete,3,3
+2026-03-17T03:29:26.626Z,19. Alertas Automatizados,19.3,Queda de 50% nas candidaturas,3,3
+2026-03-17T03:29:26.626Z,19. Alertas Automatizados,19.4,Motorista de alto valor com risco de evasao,3,3
+2026-03-17T03:29:26.626Z,19. Alertas Automatizados,19.5,CNH proxima do vencimento (7 dias),3,3
+2026-03-17T03:29:26.626Z,19. Alertas Automatizados,19.6,Poucas ofertas aderentes,3,3
+2026-03-17T03:29:26.626Z,19. Alertas Automatizados,19.7,Ocorrencia recente e risco de abandono,3,3
+2026-03-17T03:29:26.626Z,20. Aderencia Oferta-Perfil,20.1,Match entre preferencias e frete,3,3
+2026-03-17T03:29:26.626Z,21. Painel Consolidado,21.1,Painel unificado por motorista,3,3

@@ -1,0 +1,21 @@
+timestamp,area_atuacao,tempo_atuacao,proximidade_motorista,secao,id,metrica,impacto_engajamento,impacto_retencao
+2026-03-17T11:42:47.201Z,Logistica,12-18,varias_dia,15. Score de Habitualidade,15.1,Score de habitualidade,4,5
+2026-03-17T11:42:47.201Z,Logistica,12-18,varias_dia,15. Score de Habitualidade,15.2,Historico do score,2,1
+2026-03-17T11:42:54.030Z,RH,36-42,sem_contato,15. Score de Habitualidade,15.1,Score de habitualidade,5,1
+2026-03-17T11:42:54.030Z,RH,36-42,sem_contato,15. Score de Habitualidade,15.2,Historico do score,2,2
+2026-03-17T11:43:02.336Z,Produto,18-24,menos_1_mes,15. Score de Habitualidade,15.1,Score de habitualidade,4,1
+2026-03-17T11:43:02.336Z,Produto,18-24,menos_1_mes,15. Score de Habitualidade,15.2,Historico do score,5,5
+2026-03-17T11:43:10.729Z,Tecnologia,42-48,menos_1_mes,15. Score de Habitualidade,15.1,Score de habitualidade,3,3
+2026-03-17T11:43:10.729Z,Tecnologia,42-48,menos_1_mes,15. Score de Habitualidade,15.2,Historico do score,1,5
+2026-03-17T11:43:18.546Z,Data Science,36-42,1_semana,15. Score de Habitualidade,15.1,Score de habitualidade,1,5
+2026-03-17T11:43:18.546Z,Data Science,36-42,1_semana,15. Score de Habitualidade,15.2,Historico do score,5,4
+2026-03-17T11:43:26.848Z,Tecnologia,36-42,varias_dia,15. Score de Habitualidade,15.1,Score de habitualidade,4,5
+2026-03-17T11:43:26.848Z,Tecnologia,36-42,varias_dia,15. Score de Habitualidade,15.2,Historico do score,3,1
+2026-03-17T11:43:34.621Z,Marketing,36-42,1_dia,15. Score de Habitualidade,15.1,Score de habitualidade,5,3
+2026-03-17T11:43:34.621Z,Marketing,36-42,1_dia,15. Score de Habitualidade,15.2,Historico do score,4,1
+2026-03-17T11:43:42.425Z,Marketing,54-60,menos_1_mes,15. Score de Habitualidade,15.1,Score de habitualidade,2,3
+2026-03-17T11:43:42.425Z,Marketing,54-60,menos_1_mes,15. Score de Habitualidade,15.2,Historico do score,3,2
+2026-03-17T11:43:50.226Z,Marketing,36-42,menos_1_mes,15. Score de Habitualidade,15.1,Score de habitualidade,3,1
+2026-03-17T11:43:50.226Z,Marketing,36-42,menos_1_mes,15. Score de Habitualidade,15.2,Historico do score,3,3
+2026-03-17T11:43:58.591Z,Logistica,18-24,menos_1_mes,15. Score de Habitualidade,15.1,Score de habitualidade,1,1
+2026-03-17T11:43:58.591Z,Logistica,18-24,menos_1_mes,15. Score de Habitualidade,15.2,Historico do score,1,2
