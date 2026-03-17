@@ -450,7 +450,7 @@
     <div class="card">
         <div class="card-header">
             <h1 style="text-transform: uppercase;">Impacto das Métricas em Engajamento e Retenção</h1>
-            <p>Para cada métrica, avalie o impacto no <strong>engajamento</strong> e na <strong>retenção</strong> dos motoristas.</p>
+            <p>Para cada métrica, avalie o impacto no <strong>engajamento</strong> e na <strong>retenção</strong> dos prestadores.</p>
             <div class="time-hint">~5 minutos · Progresso salvo automaticamente</div>
             <div class="req">* Indica uma pergunta obrigatória</div>
         </div>
@@ -460,7 +460,7 @@
         <div style="padding: 22px 24px;">
             <div class="section-title" style="padding: 0 0 10px;">Apresentação</div>
             <p style="font-size: 14px; color: var(--px-text); line-height: 1.7;">
-                Este instrumento tem como objetivo avaliar, a partir da percepção das áreas envolvidas, o impacto de diferentes métricas no engajamento e na retenção dos motoristas na plataforma. As respostas ajudarão a identificar quais indicadores são mais relevantes para acompanhamento, análise e priorização de ações, apoiando a construção de uma visão mais consistente sobre os fatores que influenciam a permanência e a atividade dos prestadores.
+                Este instrumento tem como objetivo avaliar, a partir da percepção das áreas envolvidas, o impacto de diferentes métricas no engajamento e na retenção dos prestadores na plataforma. As respostas ajudarão a identificar quais indicadores são mais relevantes para acompanhamento, análise e priorização de ações, apoiando a construção de uma visão mais consistente sobre os fatores que influenciam a permanência e a atividade dos prestadores.
             </p>
         </div>
     </div>
@@ -494,14 +494,14 @@
                 <div class="error-msg">Selecione o tempo de atuação</div>
             </div>
             <div class="id-field" id="field_proximidade">
-                <label>Nível de proximidade com o motorista <span class="req-star">*</span></label>
+                <label>Nível de proximidade com o prestador <span class="req-star">*</span></label>
                 <select id="id_proximidade">
                     <option value="">Selecione...</option>
-                    <option value="varias_dia">Várias vezes por dia — tenho contato direto com motoristas repetidamente ao longo do dia</option>
-                    <option value="1_dia">Pelo menos 1 vez por dia — interajo com motoristas todos ou quase todos os dias</option>
+                    <option value="varias_dia">Várias vezes por dia — tenho contato direto com prestadores repetidamente ao longo do dia</option>
+                    <option value="1_dia">Pelo menos 1 vez por dia — interajo com prestadores todos ou quase todos os dias</option>
                     <option value="1_semana">Pelo menos 1 vez por semana — tenho contato recorrente, mas não diário</option>
-                    <option value="1_mes">Pelo menos 1 vez por mês — acompanho motoristas ocasionalmente</option>
-                    <option value="menos_1_mes">Menos de 1 vez por mês — raramente tenho contato com motoristas</option>
+                    <option value="1_mes">Pelo menos 1 vez por mês — acompanho prestadores ocasionalmente</option>
+                    <option value="menos_1_mes">Menos de 1 vez por mês — raramente tenho contato com prestadores</option>
                     <option value="sem_contato">Sem contato direto — minha visão é indireta, por relatórios, sistema ou equipe</option>
                 </select>
                 <div class="error-msg">Selecione o nível de proximidade</div>
@@ -545,7 +545,7 @@
 const SC = ['Nenhum','Baixo','Moderado','Alto','Muito alto'];
 
 const D = [
-  {t:'1. Base Cadastral',q:[{i:'1.1',m:'Perfil completo do motorista'},{i:'1.1b',m:'Endereço com coordenadas'},{i:'1.1c',m:'Cidades onde opera'}]},
+  {t:'1. Base Cadastral',q:[{i:'1.1',m:'Perfil completo do prestador'},{i:'1.1b',m:'Endereço com coordenadas'},{i:'1.1c',m:'Cidades onde opera'}]},
   {t:'2. Atividade no App',q:[{i:'2.1',m:'Último acesso ao app'},{i:'2.2',m:'Sessões detalhadas'},{i:'2.3',m:'Notificações abertas'},{i:'2.4',m:'Tracking de notificações'}]},
   {t:'3. Operação e Fretes',q:[{i:'3.1',m:'Visualizações e candidaturas'},{i:'3.2',m:'Contratos concluídos'},{i:'3.3',m:'Contratos cancelados'},{i:'3.4',m:'Remoções de contrato'},{i:'3.5',m:'Tempo até primeiro frete'},{i:'3.6',m:'Intervalo entre fretes'}]},
   {t:'4. Convites',q:[{i:'4.1',m:'Convites recebidos/aceitos/recusados'}]},
@@ -558,9 +558,9 @@ const D = [
   {t:'11. Preferências',q:[{i:'11.1',m:'Preferências cadastradas'},{i:'11.2',m:'Preferências inferidas'},{i:'11.3',m:'Preferência tipo contrato'}]},
   {t:'12. Férias e Inatividade',q:[{i:'12.1',m:'Férias ou retorno ao CLT'}]},
   {t:'13. Geolocalização',q:[{i:'13.1',m:'Distância ao ponto de coleta'},{i:'13.2',m:'Distância média aceita'}]},
-  {t:'14. Eventos de Contrato',q:[{i:'14.1',m:'Eventos por motorista'},{i:'14.2',m:'Tipos e labels de eventos'}]},
+  {t:'14. Eventos de Contrato',q:[{i:'14.1',m:'Eventos por prestador'},{i:'14.2',m:'Tipos e labels de eventos'}]},
   {t:'15. Score de Habitualidade',q:[{i:'15.1',m:'Score de habitualidade'},{i:'15.2',m:'Histórico do score'}]},
-  {t:'16. Score do Motorista',q:[{i:'16.1',m:'Score atual'},{i:'16.2',m:'Histórico do score'}]},
+  {t:'16. Score do Prestador',q:[{i:'16.1',m:'Score atual'},{i:'16.2',m:'Histórico do score'}]},
   {t:'17. Blacklist',q:[{i:'17.1',m:'Bloqueios por empresa'}]},
   {t:'18. Score de Risco Composto',q:[{i:'18.1',m:'Score composto de churn'}]},
   {t:'19. Alertas Automatizados',q:[{i:'19.1',m:'14 dias sem login'},{i:'19.2',m:'30 dias sem frete'},{i:'19.3',m:'Queda 50% candidaturas'},{i:'19.4',m:'Alto valor + risco evasão'},{i:'19.5',m:'CNH vencendo (7 dias)'},{i:'19.6',m:'Poucas ofertas aderentes'},{i:'19.7',m:'Ocorrência recente + risco'}]},
